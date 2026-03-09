@@ -1,0 +1,51 @@
+/* Teacher Learners */
+.learners-content { --background: #f0f5ff; }
+.als-header ion-toolbar { --background: linear-gradient(135deg, #14532d 0%, #16a34a 100%); }
+.toolbar-title-green { color: #fff !important; font-weight: 800; font-size: 20px; }
+
+.learners-top { padding: 16px 16px 0; }
+.als-searchbar-green { --background: #fff; --border-radius: 12px; --box-shadow: 0 2px 8px rgba(30,41,59,0.08); --color: #1e293b; --placeholder-color: #94a3b8; padding: 0 !important; }
+
+.learners-body  { padding: 12px 16px 24px; }
+.learners-count { font-size: 12px; color: #94a3b8; font-weight: 600; margin: 0 0 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.learner-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 8px rgba(30,41,59,0.07);
+  margin-bottom: 10px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.learner-avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.learner-info { flex: 1; min-width: 0; }
+.learner-name  { font-size: 14px; font-weight: 700; color: #1e293b; margin: 0 0 2px; }
+.learner-level { font-size: 11px; color: #94a3b8; margin: 0 0 6px; font-weight: 600; }
+.learner-progress-row { display: flex; align-items: center; gap: 8px; }
+.als-progress-track { background: #e2e8f0; border-radius: 99px; height: 6px; overflow: hidden; }
+.als-progress-fill  { height: 100%; border-radius: 99px; transition: width 0.6s; }
+.learner-pct { font-size: 12px; font-weight: 700; color: #475569; white-space: nowrap; }
+.learner-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.learner-status {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 99px;
+}
+.learner-status.active   { color: #16a34a; background: #dcfce7; }
+.learner-status.inactive { color: #94a3b8; background: #f1f5f9; }

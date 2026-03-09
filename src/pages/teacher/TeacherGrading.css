@@ -1,0 +1,55 @@
+/* Teacher Grading */
+.grading-content { --background: #f0f5ff; }
+.als-header ion-toolbar { --background: linear-gradient(135deg, #14532d, #16a34a); }
+.toolbar-title-green { color: #fff !important; font-weight: 800; font-size: 20px; }
+.seg-green { --background: transparent; padding: 0 16px 12px; }
+
+.grading-body { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.empty-state  { text-align: center; padding: 60px 20px; color: #94a3b8; font-size: 15px; }
+
+.grade-card { background: #fff; border-radius: 16px; padding: 16px; box-shadow: 0 2px 10px rgba(30,41,59,0.08); }
+.grade-card-top { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+.grade-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #14532d, #16a34a);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.grade-info { flex: 1; }
+.grade-learner { font-size: 14px; font-weight: 700; color: #1e293b; margin: 0 0 2px; }
+.grade-quiz    { font-size: 12px; color: #64748b; margin: 0 0 4px; }
+.grade-time    { font-size: 11px; color: #94a3b8; display: flex; align-items: center; gap: 4px; margin: 0; }
+.grade-score-badge { padding: 6px 14px; border-radius: 99px; font-size: 16px; font-weight: 800; }
+
+.grade-input-row { display: flex; gap: 8px; }
+.grade-input {
+  flex: 1;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #1e293b;
+  background: #f8fafc;
+  outline: none;
+}
+.grade-input:focus { border-color: #16a34a; background: #fff; }
+.grade-submit-btn {
+  position: relative;
+  background: linear-gradient(135deg, #14532d, #16a34a);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+}

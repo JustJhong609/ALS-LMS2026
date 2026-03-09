@@ -1,0 +1,168 @@
+/* Register Page Styles */
+
+.register-content { --background: #f0f5ff; }
+
+/* ── Top bar ── */
+.reg-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 0;
+}
+.back-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(30,41,59,0.10);
+  color: #1d4ed8;
+  font-size: 22px;
+  overflow: hidden;
+}
+.step-dots { display: flex; gap: 6px; }
+.step-dot {
+  width: 28px; height: 6px;
+  border-radius: 99px;
+  background: #e2e8f0;
+  transition: background 0.3s;
+}
+.step-dot.active { background: #1d4ed8; }
+
+/* ── Header ── */
+.reg-header { padding: 20px 24px 8px; }
+.reg-title { font-size: 26px; font-weight: 800; color: #1e293b; margin: 0 0 4px; }
+.reg-sub { font-size: 14px; color: #64748b; margin: 0; }
+
+/* ── Body ── */
+.reg-body { padding: 20px 24px 48px; display: flex; flex-direction: column; gap: 4px; }
+
+.reg-role-row { display: flex; gap: 10px; margin-bottom: 20px; }
+.reg-role-btn {
+  position: relative;
+  flex: 1;
+  padding: 14px;
+  border-radius: 14px;
+  border: 2px solid #e2e8f0;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+.reg-role-btn.active { border-color: #1d4ed8; background: #eff6ff; color: #1d4ed8; }
+
+.reg-row { display: flex; gap: 10px; }
+.form-group { margin-bottom: 16px; }
+.form-group.half { flex: 1; }
+.field-label { font-size: 13px; font-weight: 600; color: #475569; margin: 0 0 8px; }
+.req { color: #dc2626; }
+
+.input-wrap {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0 12px;
+  box-shadow: 0 1px 4px rgba(30,41,59,0.06);
+  transition: border-color 0.2s;
+}
+.input-wrap:focus-within { border-color: #1d4ed8; box-shadow: 0 0 0 3px rgba(29,78,216,0.12); }
+.input-icon { font-size: 18px; color: #94a3b8; margin-right: 8px; flex-shrink: 0; }
+.als-field {
+  flex: 1;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  --background: transparent;
+  --color: #1e293b;
+  --placeholder-color: #94a3b8;
+  font-size: 15px;
+}
+
+/* ── PW Strength ── */
+.pw-strength { margin-top: -4px; margin-bottom: 16px; }
+.pw-bars { display: flex; gap: 6px; margin-bottom: 6px; }
+.pw-bar { flex: 1; height: 6px; border-radius: 99px; background: #e2e8f0; transition: background 0.3s; }
+.pw-bar.filled { background: linear-gradient(90deg, #1d4ed8, #16a34a); }
+.pw-hint { font-size: 12px; color: #64748b; margin: 0; }
+
+/* ── Level list ── */
+.level-list { display: flex; flex-direction: column; gap: 8px; }
+.level-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #334155;
+  cursor: pointer;
+  text-align: left;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+.level-item.active { border-color: #1d4ed8; background: #eff6ff; color: #1d4ed8; font-weight: 700; }
+.level-item ion-icon { font-size: 20px; flex-shrink: 0; }
+.level-check { margin-left: auto; font-size: 16px; color: #16a34a; }
+
+/* ── Review card ── */
+.review-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(30,41,59,0.08);
+  margin-top: 8px;
+}
+.review-title { font-size: 14px; font-weight: 700; color: #1e293b; margin: 0 0 14px; }
+.review-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 14px; color: #64748b; }
+.review-row:last-child { border-bottom: none; }
+.review-row strong { color: #1e293b; }
+
+/* ── Error ── */
+.error-box { background: #fee2e2; color: #dc2626; border-radius: 10px; padding: 10px 14px; font-size: 13px; margin-bottom: 8px; }
+
+/* ── Buttons ── */
+.next-btn {
+  --background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
+  --color: #fff;
+  --border-radius: 14px;
+  height: 52px;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 12px 0 0;
+}
+.login-link { text-align: center; font-size: 14px; color: #64748b; margin-top: 20px; }
+.link-btn { background: none; border: none; color: #1d4ed8; font-weight: 700; font-size: 14px; cursor: pointer; padding: 0; }
+
+/* ── Success Screen ── */
+.success-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 48px 32px;
+  text-align: center;
+}
+.success-icon { font-size: 72px; margin-bottom: 20px; }
+.success-title { font-size: 28px; font-weight: 800; color: #1e293b; margin: 0 0 12px; }
+.success-sub { font-size: 15px; color: #64748b; line-height: 1.6; margin: 0 0 32px; }
+.success-btn {
+  --background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
+  --border-radius: 14px;
+  height: 52px;
+  font-weight: 700;
+  font-size: 16px;
+  width: 100%;
+}

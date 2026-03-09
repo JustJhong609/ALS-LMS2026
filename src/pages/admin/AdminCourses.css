@@ -1,0 +1,196 @@
+.ac-header ion-toolbar {
+  --background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  --color: #fff;
+  --padding-top: 14px;
+  --padding-bottom: 14px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+}
+
+.ac-toolbar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ac-toolbar-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.ac-add-btn {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 20px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+.ac-add-btn ion-icon { font-size: 16px; }
+
+.ac-content { --background: #f8f9ff; }
+
+.ac-body {
+  padding: 16px;
+  padding-bottom: 32px;
+}
+
+/* Summary */
+.ac-summary-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.ac-summary-chip {
+  flex: 1;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 6px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+.acsc-num {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.acsc-lbl {
+  font-size: 10px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.ac-searchbar {
+  --border-radius: 12px;
+  --background: #fff;
+  --box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  padding: 0 0 10px;
+}
+
+.ac-segment {
+  margin-bottom: 14px;
+  --background: #e2e8f0;
+  border-radius: 10px;
+}
+
+.ac-segment ion-segment-button {
+  --indicator-color: #7c3aed;
+  --color-checked: #fff;
+  --color: #64748b;
+  font-size: 11px;
+  min-height: 34px;
+}
+
+.ac-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ac-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+.ac-icon-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  flex-shrink: 0;
+}
+
+.ac-icon { font-size: 24px; }
+
+.ac-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.ac-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+  flex-wrap: wrap;
+}
+
+.ac-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.ac-status-badge {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.ac-status-badge.status-active   { --background: #dcfce7; --color: #15803d; }
+.ac-status-badge.status-draft    { --background: #fef3c7; --color: #92400e; }
+.ac-status-badge.status-archived { --background: #f1f5f9; --color: #64748b; }
+
+.ac-teacher {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.ac-meta-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.ac-meta {
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+.ac-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.ac-edit-btn, .ac-del-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.ac-edit-btn { background: #ede9fe; color: #7c3aed; }
+.ac-del-btn  { background: #fee2e2; color: #dc2626; }
+
+.ac-chevron  { color: #cbd5e1; font-size: 16px; }

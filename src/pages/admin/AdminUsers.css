@@ -1,0 +1,198 @@
+.au-header ion-toolbar {
+  --background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  --color: #fff;
+  --padding-top: 14px;
+  --padding-bottom: 14px;
+}
+
+.au-toolbar-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+
+.au-content {
+  --background: #f8f9ff;
+}
+
+.au-body {
+  padding: 16px;
+  padding-bottom: 32px;
+}
+
+/* ── Summary Chips ── */
+.au-summary-chips {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.au-chip {
+  flex: 1;
+  min-width: 64px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 6px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+.au-chip-num {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+  color: #7c3aed;
+}
+
+.au-chip-lbl {
+  font-size: 10px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* ── Searchbar ── */
+.au-searchbar {
+  --border-radius: 12px;
+  --background: #fff;
+  --box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  padding: 0 0 10px;
+}
+
+/* ── Segment ── */
+.au-segment {
+  margin-bottom: 14px;
+  --background: #e2e8f0;
+  border-radius: 10px;
+}
+
+.au-segment ion-segment-button {
+  --indicator-color: #7c3aed;
+  --color-checked: #fff;
+  --color: #64748b;
+  font-size: 13px;
+  min-height: 34px;
+}
+
+/* ── User List ── */
+.au-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.au-empty {
+  text-align: center;
+  padding: 40px 0;
+  color: #94a3b8;
+}
+
+.au-empty p {
+  margin: 8px 0 0;
+  font-size: 14px;
+}
+
+.au-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+.au-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #ede9fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.au-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.au-name-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.au-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.au-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.au-status-dot.active   { background: #22c55e; }
+.au-status-dot.inactive { background: #e2e8f0; }
+
+.au-email {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.au-meta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.au-role-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.au-role-badge.role-student { --background: #dbeafe; --color: #1d4ed8; }
+.au-role-badge.role-teacher { --background: #dcfce7; --color: #15803d; }
+
+.au-meta-text {
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+.au-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.au-toggle-btn,
+.au-edit-btn,
+.au-del-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.au-toggle-btn.active   { background: #dcfce7; color: #16a34a; }
+.au-toggle-btn.inactive { background: #f1f5f9; color: #94a3b8; }
+.au-edit-btn  { background: #ede9fe; color: #7c3aed; }
+.au-del-btn   { background: #fee2e2; color: #dc2626; }

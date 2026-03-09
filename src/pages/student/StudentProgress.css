@@ -1,0 +1,35 @@
+/* Student Progress */
+.progress-content { --background: #f0f5ff; }
+.als-header ion-toolbar { --background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%); }
+.toolbar-title { color: #fff !important; font-weight: 800; font-size: 20px; }
+
+.progress-body { padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+
+/* Stats row */
+.prog-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.prog-stat-card { background: #fff; border-radius: 14px; padding: 14px 8px; text-align: center; box-shadow: 0 2px 8px rgba(30,41,59,0.07); display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.prog-stat-card ion-icon { font-size: 22px; }
+.ps-num { font-size: 18px; font-weight: 800; color: #1e293b; }
+.ps-lbl { font-size: 10px; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; }
+
+/* Cards */
+.prog-card { background: #fff; border-radius: 16px; padding: 20px; box-shadow: 0 2px 12px rgba(30,41,59,0.08); }
+.prog-card-title { font-size: 15px; font-weight: 700; color: #1e293b; margin: 0 0 16px; }
+
+/* Subject breakdown */
+.subj-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.subj-row:last-child { margin-bottom: 0; }
+.subj-name { font-size: 13px; font-weight: 600; color: #475569; width: 80px; flex-shrink: 0; }
+.subj-track { flex: 1; height: 8px; }
+.als-progress-track { background: #e2e8f0; border-radius: 99px; overflow: hidden; }
+.als-progress-fill { height: 100%; border-radius: 99px; transition: width 0.6s; }
+.subj-pct { font-size: 13px; font-weight: 700; color: #64748b; width: 40px; text-align: right; flex-shrink: 0; }
+
+/* Badges */
+.badge-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.badge-item { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 8px; border-radius: 14px; overflow: hidden; }
+.badge-item.earned { background: linear-gradient(135deg, #eff6ff, #dbeafe); border: 1.5px solid #bfdbfe; }
+.badge-item.locked { background: #f8fafc; border: 1.5px solid #e2e8f0; opacity: 0.6; }
+.badge-icon { font-size: 28px; }
+.badge-label { font-size: 10px; font-weight: 600; color: #334155; text-align: center; margin: 0; line-height: 1.3; }
+.badge-lock { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(248,250,252,0.7); font-size: 16px; border-radius: 14px; }

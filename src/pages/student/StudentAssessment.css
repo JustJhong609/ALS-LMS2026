@@ -1,0 +1,62 @@
+/* Student Assessment */
+.assess-content { --background: #f0f5ff; }
+
+.als-header ion-toolbar { --background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%); }
+.toolbar-title { color: #fff !important; font-weight: 800; font-size: 20px; }
+
+.seg { --background: transparent; padding: 0 16px 12px; }
+
+.assess-body { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+
+.empty-state { text-align: center; padding: 60px 20px; color: #94a3b8; font-size: 15px; }
+
+.assess-card {
+  position: relative;
+  display: flex;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(30,41,59,0.08);
+  cursor: pointer;
+}
+.assess-bar { width: 5px; flex-shrink: 0; }
+.assess-inner { flex: 1; padding: 16px; }
+.assess-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 4px; }
+.assess-title { font-size: 14px; font-weight: 700; color: #1e293b; margin: 0; flex: 1; }
+.assess-subject { font-size: 12px; color: #94a3b8; font-weight: 600; margin: 0 0 10px; }
+
+.assess-meta { display: flex; flex-wrap: wrap; gap: 6px; }
+.meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 99px;
+}
+
+.score-row { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+.score-track { flex: 1; }
+.als-progress-track { background: #e2e8f0; border-radius: 99px; height: 8px; overflow: hidden; }
+.als-progress-fill  { height: 100%; border-radius: 99px; transition: width 0.6s; }
+.score-pct { font-size: 15px; font-weight: 800; white-space: nowrap; }
+
+.take-btn-row { margin-top: 12px; }
+.take-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  overflow: hidden;
+}

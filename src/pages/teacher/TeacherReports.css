@@ -1,0 +1,25 @@
+/* Teacher Reports */
+.reports-content { --background: #f0f5ff; }
+.als-header ion-toolbar { --background: linear-gradient(135deg, #14532d, #16a34a); }
+.toolbar-title-green { color: #fff !important; font-weight: 800; font-size: 20px; }
+
+.reports-body { padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+
+.rep-summary-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.rep-stat {
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(30,41,59,0.07);
+  border-top: 3px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.rep-num { font-size: 20px; font-weight: 800; }
+.rep-lbl { font-size: 10px; color: #94a3b8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; }
+
+.rep-card { background: #fff; border-radius: 16px; padding: 20px; box-shadow: 0 2px 12px rgba(30,41,59,0.08); }
+.rep-card-title { font-size: 15px; font-weight: 700; color: #1e293b; margin: 0 0 16px; }

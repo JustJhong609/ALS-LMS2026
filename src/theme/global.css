@@ -1,0 +1,140 @@
+/* ALS-LMS 2026 — Global Styles */
+
+/* ── Smooth page transitions ── */
+ion-page {
+  animation: fadeSlideIn 0.25s ease;
+}
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Cards ── */
+ion-card {
+  border-radius: var(--als-radius-md) !important;
+  box-shadow: var(--als-shadow-sm) !important;
+  margin: 0 !important;
+}
+
+/* ── Buttons ── */
+ion-button {
+  --border-radius: var(--als-radius-sm);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* ── Toolbar gradient ── */
+.als-header ion-toolbar {
+  --background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 60%, #2563eb 100%);
+  --color: #fff;
+}
+
+/* ── Stat cards ── */
+.stat-card {
+  padding: 16px;
+  border-radius: var(--als-radius-md);
+  background: var(--ion-card-background);
+  box-shadow: var(--als-shadow-sm);
+}
+
+/* ── Avatar ── */
+.als-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--als-blue-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--als-blue);
+}
+
+/* ── Progress bar ── */
+.als-progress-track {
+  background: #e2e8f0;
+  border-radius: 99px;
+  height: 8px;
+  overflow: hidden;
+}
+.als-progress-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #1d4ed8, #16a34a);
+  transition: width 0.6s ease;
+}
+
+/* ── Badge pills ── */
+.als-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.als-badge-blue   { background: var(--als-blue-light);   color: var(--als-blue); }
+.als-badge-green  { background: var(--als-green-light);  color: var(--als-green); }
+.als-badge-amber  { background: var(--als-amber-light);  color: var(--als-amber); }
+.als-badge-red    { background: var(--als-red-light);    color: var(--als-red); }
+.als-badge-purple { background: var(--als-purple-light); color: var(--als-purple); }
+
+/* ── Section headers ── */
+.section-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ion-text-color);
+  margin: 0 0 12px 0;
+}
+
+/* ── Welcome gradient hero ── */
+.hero-gradient {
+  background: linear-gradient(155deg, #1e3a8a 0%, #1d4ed8 50%, #0ea5e9 100%);
+}
+
+/* ── Scrollable content ── */
+ion-content {
+  --padding-bottom: 24px;
+}
+
+/* ── Tab bar shadow ── */
+ion-tab-bar {
+  box-shadow: 0 -2px 12px rgba(30,41,59,0.08);
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+/* ── Form fields ── */
+.als-input ion-input,
+.als-input ion-select {
+  --border-radius: var(--als-radius-sm);
+}
+
+/* ── Page padding ── */
+.page-content {
+  padding: 16px;
+}
+
+/* ── Skeleton shimmer ── */
+ion-skeleton-text {
+  --border-radius: var(--als-radius-sm);
+}
+
+/* ── Chip multi-select ── */
+.filter-chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+.filter-chips::-webkit-scrollbar { display: none; }
+
+/* ── Floating gradient button ── */
+.fab-blue {
+  --background: linear-gradient(135deg, #1d4ed8, #7c3aed);
+  --color: #fff;
+}

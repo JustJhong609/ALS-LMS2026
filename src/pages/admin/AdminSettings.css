@@ -1,0 +1,164 @@
+.as-header ion-toolbar {
+  --background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  --color: #fff;
+  --padding-top: 14px;
+  --padding-bottom: 14px;
+}
+
+.as-toolbar-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+
+.as-content { --background: #f8f9ff; }
+
+.as-body {
+  padding: 16px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.as-section-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #7c3aed;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+.as-sec-icon {
+  font-size: 15px;
+}
+
+.as-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+/* Fields */
+.as-field {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.as-field:last-child {
+  border-bottom: none;
+}
+
+.as-field-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.as-input {
+  --background: #f8f9ff;
+  --border-radius: 8px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.as-select {
+  --background: #f8f9ff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  width: 100%;
+}
+
+/* Toggle items */
+.as-toggle-item {
+  --padding-start: 16px;
+  --inner-padding-end: 16px;
+  --min-height: 52px;
+}
+
+.as-toggle-item h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.as-toggle-item p {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.as-item-icon {
+  color: #7c3aed;
+  font-size: 18px;
+  margin-right: 12px;
+}
+
+/* Security list */
+.as-security-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.as-security-item {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e293b;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+}
+
+.as-security-item:last-child { border-bottom: none; }
+
+.as-chevron {
+  color: #cbd5e1;
+  font-size: 18px;
+}
+
+/* Action buttons */
+.as-save-btn, .as-reset-btn {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border: none;
+  border-radius: 14px;
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.as-save-btn {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  color: #fff;
+}
+
+.as-reset-btn {
+  background: #fff;
+  color: #dc2626;
+  border: 1.5px solid #fecaca;
+}

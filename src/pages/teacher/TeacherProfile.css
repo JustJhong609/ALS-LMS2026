@@ -1,0 +1,26 @@
+/* Teacher Profile */
+.t-profile-content { --background: #f0f5ff; }
+.als-header ion-toolbar { --background: linear-gradient(135deg, #14532d, #16a34a); }
+
+.t-profile-hero { position: relative; background: linear-gradient(135deg, #14532d, #16a34a); padding: 0 20px 32px; text-align: center; overflow: hidden; }
+.t-hero-wave { position: absolute; bottom: -1px; left: 0; right: 0; height: 32px; background: #f0f5ff; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
+.t-avatar-wrap { display: inline-block; margin-bottom: 12px; }
+.t-avatar { width: 88px; height: 88px; border-radius: 50%; background: rgba(255,255,255,0.25); color: #fff; font-size: 34px; font-weight: 900; display: flex; align-items: center; justify-content: center; border: 3px solid rgba(255,255,255,0.5); }
+.t-profile-name { font-size: 22px; font-weight: 800; color: #fff; margin: 0 0 4px; }
+.t-profile-role { font-size: 13px; color: rgba(255,255,255,0.75); margin: 0 0 20px; }
+.t-profile-stats { display: flex; justify-content: center; align-items: center; background: rgba(255,255,255,0.15); border-radius: 14px; padding: 14px; backdrop-filter: blur(8px); }
+.tps { display: flex; flex-direction: column; align-items: center; flex: 1; }
+.tps-num { font-size: 22px; font-weight: 900; color: #fbbf24; }
+.tps-lbl { font-size: 11px; color: rgba(255,255,255,0.7); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.tps-div { width: 1px; height: 36px; background: rgba(255,255,255,0.3); }
+
+.t-profile-body { padding: 20px 16px 48px; display: flex; flex-direction: column; gap: 16px; }
+.menu-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(30,41,59,0.08); }
+.menu-item { position: relative; display: flex; align-items: center; gap: 14px; padding: 15px 16px; border-bottom: 1px solid #f1f5f9; cursor: pointer; overflow: hidden; }
+.menu-item:last-child { border-bottom: none; }
+.menu-icon-wrap { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.menu-label { flex: 1; font-size: 14px; font-weight: 600; color: #1e293b; }
+.menu-arrow { color: #cbd5e1; font-size: 18px; }
+.logout-btn { position: relative; display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 16px; background: #fff; border: 1.5px solid #fecaca; border-radius: 14px; color: #dc2626; font-size: 15px; font-weight: 700; cursor: pointer; overflow: hidden; box-shadow: 0 2px 8px rgba(30,41,59,0.06); }
+.logout-btn ion-icon { font-size: 20px; }
+.app-ver { text-align: center; font-size: 12px; color: #cbd5e1; margin: 0; }

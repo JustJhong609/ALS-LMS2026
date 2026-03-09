@@ -1,0 +1,147 @@
+/* Student Dashboard Styles */
+
+.dash-content { --background: #f0f5ff; }
+
+/* ── Toolbar ── */
+.als-header ion-toolbar {
+  --background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
+  --padding-top: 12px;
+  --padding-bottom: 16px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+}
+.dash-toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.greet-label { font-size: 12px; color: rgba(255,255,255,0.7); margin: 0 0 2px; }
+.greet-name  { font-size: 20px; font-weight: 800; color: #fff; margin: 0 0 6px; }
+.greet-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+.dash-actions { display: flex; align-items: center; gap: 10px; margin-top: 4px; }
+.notif-btn {
+  position: relative;
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.18);
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+.notif-badge { position: absolute; top: 4px; right: 4px; font-size: 9px !important; min-width: 16px; height: 16px; padding: 0 4px; }
+.dash-avatar {
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255,255,255,0.4);
+}
+
+/* ── Body ── */
+.dash-body { padding: 16px; display: flex; flex-direction: column; gap: 20px; }
+
+/* ── Overall card ── */
+.overall-card {
+  background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 24px rgba(29,78,216,0.35);
+}
+.overall-left { flex: 1; }
+.overall-label { font-size: 12px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px; margin: 0 0 4px; }
+.overall-pct   { font-size: 40px; font-weight: 900; color: #fbbf24; margin: 0 0 4px; }
+.overall-sub   { font-size: 13px; color: rgba(255,255,255,0.8); margin: 0; }
+.overall-ring  { flex-shrink: 0; }
+
+/* ── Quick stats ── */
+.quick-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.qstat-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(30,41,59,0.07);
+}
+.qstat-icon { font-size: 22px; margin-bottom: 6px; }
+.qstat-num { font-size: 18px; font-weight: 800; color: #1e293b; margin: 0 0 2px; }
+.qstat-lbl { font-size: 10px; color: #94a3b8; margin: 0; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; }
+
+/* ── Section ── */
+.section-wrap { display: flex; flex-direction: column; gap: 12px; }
+.section-title { font-size: 16px; font-weight: 700; color: #1e293b; margin: 0; }
+.section-title-row { display: flex; justify-content: space-between; align-items: center; }
+.see-all { background: none; border: none; color: #1d4ed8; font-size: 13px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 2px; padding: 0; }
+
+/* ── Announcements ── */
+.ann-list { display: flex; flex-direction: column; gap: 8px; }
+.ann-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 6px rgba(30,41,59,0.06);
+}
+.ann-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--ann-color, #1d4ed8); flex-shrink: 0; }
+.ann-title { font-size: 13px; font-weight: 600; color: #1e293b; margin: 0 0 3px; }
+.ann-date  { font-size: 11px; color: #94a3b8; margin: 0; }
+
+/* ── Course cards ── */
+.courses-list { display: flex; flex-direction: column; gap: 10px; }
+.course-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 10px rgba(30,41,59,0.07);
+  cursor: pointer;
+  overflow: hidden;
+}
+.course-icon-wrap { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.course-info { flex: 1; min-width: 0; }
+.course-name { font-size: 13px; font-weight: 700; color: #1e293b; margin: 0 0 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.als-progress-track { background: #e2e8f0; border-radius: 99px; height: 6px; overflow: hidden; }
+.als-progress-fill  { height: 100%; border-radius: 99px; transition: width 0.6s ease; }
+.course-meta { font-size: 11px; color: #94a3b8; margin: 4px 0 0; }
+.course-arrow { color: #cbd5e1; font-size: 18px; flex-shrink: 0; }
+
+/* ── Upcoming ── */
+.upcoming-list { display: flex; flex-direction: column; gap: 8px; }
+.upcoming-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 6px rgba(30,41,59,0.06);
+}
+.upcoming-type-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.upcoming-info { flex: 1; }
+.upcoming-title { font-size: 13px; font-weight: 600; color: #1e293b; margin: 0 0 4px; }
+.upcoming-date { font-size: 12px; font-weight: 700; color: #64748b; white-space: nowrap; }

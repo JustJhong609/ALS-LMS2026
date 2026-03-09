@@ -1,0 +1,92 @@
+/* Lesson Viewer */
+.lv-content { --background: #f8faff; }
+
+.lv-toolbar {
+  --background: linear-gradient(135deg, #1e3a8a, var(--bar-color, #1d4ed8));
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+.lv-back {
+  position: relative;
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.lv-toolbar-info { flex: 1; padding-top: 2px; }
+.lv-subject { font-size: 11px; color: rgba(255,255,255,0.7); margin: 0 0 2px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.lv-lesson-title { font-size: 15px; font-weight: 700; color: #fff; margin: 0; }
+
+/* ── Meta ── */
+.lv-meta { display: flex; gap: 8px; padding: 16px 20px 0; flex-wrap: wrap; }
+.lv-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 99px;
+  text-transform: capitalize;
+}
+.lv-meta-pill.done { background: #dcfce7; color: #16a34a; }
+
+/* ── Content body ── */
+.lv-body {
+  padding: 20px 20px 8px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.lv-h2 { font-size: 22px; font-weight: 800; color: #1e293b; margin: 20px 0 12px; }
+.lv-h3 { font-size: 17px; font-weight: 700; color: #1e293b; margin: 16px 0 8px; }
+.lv-h4 { font-size: 15px; font-weight: 700; color: #334155; margin: 14px 0 6px; }
+.lv-p  { font-size: 15px; line-height: 1.7; color: #334155; margin: 0 0 12px; }
+.lv-li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #334155;
+  padding: 2px 0 2px 16px;
+  position: relative;
+}
+.lv-li::before { content: '•'; position: absolute; left: 0; color: #1d4ed8; }
+.lv-ol { font-size: 15px; line-height: 1.7; color: #334155; margin: 2px 0; }
+.lv-quote {
+  border-left: 4px solid #1d4ed8;
+  margin: 16px 0;
+  padding: 12px 16px;
+  background: #eff6ff;
+  border-radius: 0 12px 12px 0;
+  font-size: 15px;
+  color: #1e3a8a;
+  font-style: italic;
+  line-height: 1.6;
+}
+.lv-hr { border: none; border-top: 1px solid #e2e8f0; margin: 20px 0; }
+.lv-italic { font-size: 14px; color: #64748b; font-style: italic; }
+
+/* ── Nav ── */
+.lv-nav { display: flex; gap: 12px; padding: 20px 20px 48px; }
+.lv-nav-btn { flex: 1; --border-radius: 12px; --color: #1d4ed8; --border-color: #1d4ed8; font-weight: 600; }
+.lv-nav-btn-next {
+  flex: 2;
+  --background: linear-gradient(135deg, #1e3a8a, #16a34a);
+  --border-radius: 12px;
+  --color: #fff;
+  font-weight: 700;
+}

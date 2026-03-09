@@ -1,0 +1,91 @@
+/* ALS-LMS 2026 — Ionic Theme Variables */
+
+:root {
+  /* === Brand Palette === */
+  --als-blue:       #1d4ed8;
+  --als-blue-dark:  #1e3a8a;
+  --als-blue-light: #dbeafe;
+  --als-green:      #16a34a;
+  --als-green-light:#dcfce7;
+  --als-amber:      #d97706;
+  --als-amber-light:#fef3c7;
+  --als-red:        #dc2626;
+  --als-red-light:  #fee2e2;
+  --als-purple:     #7c3aed;
+  --als-purple-light:#ede9fe;
+
+  /* === Ionic Color Overrides === */
+  --ion-color-primary:         #1d4ed8;
+  --ion-color-primary-rgb:     29,78,216;
+  --ion-color-primary-contrast:#ffffff;
+  --ion-color-primary-contrast-rgb:255,255,255;
+  --ion-color-primary-shade:   #1a45be;
+  --ion-color-primary-tint:    #3460dc;
+
+  --ion-color-secondary:       #16a34a;
+  --ion-color-secondary-rgb:   22,163,74;
+  --ion-color-secondary-contrast:#ffffff;
+  --ion-color-secondary-contrast-rgb:255,255,255;
+  --ion-color-secondary-shade: #138f41;
+  --ion-color-secondary-tint:  #2dac5c;
+
+  --ion-color-tertiary:        #7c3aed;
+  --ion-color-tertiary-rgb:    124,58,237;
+  --ion-color-tertiary-contrast:#ffffff;
+  --ion-color-tertiary-contrast-rgb:255,255,255;
+  --ion-color-tertiary-shade:  #6d33d1;
+  --ion-color-tertiary-tint:   #894eef;
+
+  --ion-color-success:         #16a34a;
+  --ion-color-warning:         #d97706;
+  --ion-color-danger:          #dc2626;
+
+  --ion-color-dark:            #1e293b;
+  --ion-color-medium:          #64748b;
+  --ion-color-light:           #f1f5f9;
+
+  /* === Background & Surface === */
+  --ion-background-color:      #f0f5ff;
+  --ion-background-color-rgb:  240,245,255;
+  --ion-text-color:            #1e293b;
+  --ion-text-color-rgb:        30,41,59;
+
+  --ion-card-background:       #ffffff;
+  --ion-item-background:       #ffffff;
+  --ion-toolbar-background:    #1d4ed8;
+  --ion-toolbar-color:         #ffffff;
+  --ion-tab-bar-background:    #ffffff;
+  --ion-tab-bar-color:         #94a3b8;
+  --ion-tab-bar-color-selected:#1d4ed8;
+
+  /* === Typography === */
+  --ion-font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+
+  /* === Spacing === */
+  --als-radius-sm:  8px;
+  --als-radius-md:  14px;
+  --als-radius-lg:  20px;
+  --als-radius-xl:  28px;
+  --als-shadow-sm:  0 1px 4px rgba(30,41,59,0.08);
+  --als-shadow-md:  0 4px 16px rgba(30,41,59,0.12);
+  --als-shadow-lg:  0 8px 32px rgba(30,41,59,0.16);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ion-background-color:      #0f172a;
+    --ion-background-color-rgb:  15,23,42;
+    --ion-text-color:            #e2e8f0;
+    --ion-text-color-rgb:        226,232,240;
+    --ion-card-background:       #1e293b;
+    --ion-item-background:       #1e293b;
+    --ion-tab-bar-background:    #1e293b;
+    --ion-tab-bar-color:         #64748b;
+    --als-blue-light:            #1e3a8a;
+    --als-green-light:           #14532d;
+    --als-amber-light:           #451a03;
+    --als-red-light:             #450a0a;
+    --als-purple-light:          #2e1065;
+  }
+}
