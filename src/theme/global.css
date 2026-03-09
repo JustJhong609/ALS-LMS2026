@@ -1,26 +1,37 @@
-/* ALS-LMS 2026 — Global Styles */
+/* ALS-LMS 2026 — Global Styles (Mobile-First & Smooth) */
 
-/* ── Smooth page transitions ── */
+/* ── Mobile-first base ── */
+* { box-sizing: border-box; }
+
+/* ── Smooth page transitions + safe-area ── */
 ion-page {
-  animation: fadeSlideIn 0.25s ease;
+  animation: fadeSlideIn 0.3s cubic-bezier(.22,1,.36,1);
 }
 @keyframes fadeSlideIn {
-  from { opacity: 0; transform: translateY(12px); }
+  from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ── Cards ── */
 ion-card {
-  border-radius: var(--als-radius-md) !important;
-  box-shadow: var(--als-shadow-sm) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 2px 12px rgba(30,41,59,0.07) !important;
   margin: 0 !important;
+  transition: transform 0.2s cubic-bezier(.22,1,.36,1), box-shadow 0.2s;
+}
+ion-card:active {
+  transform: scale(0.98);
 }
 
 /* ── Buttons ── */
 ion-button {
-  --border-radius: var(--als-radius-sm);
+  --border-radius: 14px;
   font-weight: 600;
   letter-spacing: 0.3px;
+  transition: transform 0.15s;
+}
+ion-button:active {
+  transform: scale(0.96);
 }
 
 /* ── Toolbar gradient ── */
@@ -41,7 +52,7 @@ ion-button {
 .als-avatar {
   width: 44px;
   height: 44px;
-  border-radius: 50%;
+  border-radius: 14px;
   object-fit: cover;
   background: var(--als-blue-light);
   display: flex;
@@ -101,10 +112,24 @@ ion-content {
   --padding-bottom: 24px;
 }
 
-/* ── Tab bar shadow ── */
+/* ── Tab bar ── */
 ion-tab-bar {
-  box-shadow: 0 -2px 12px rgba(30,41,59,0.08);
-  border-top: 1px solid rgba(0,0,0,0.06);
+  --background: #ffffff;
+  --color: #94a3b8;
+  --color-selected: #1d4ed8;
+  box-shadow: 0 -2px 16px rgba(30,41,59,0.08);
+  border-top: 1px solid #f1f5f9;
+  height: 60px;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+ion-tab-button {
+  --color: #94a3b8;
+  --color-selected: #1d4ed8;
+}
+
+/* ── FAB — always above the 60px tab bar ── */
+ion-fab[vertical="bottom"] {
+  bottom: calc(60px + env(safe-area-inset-bottom, 0px) + 16px) !important;
 }
 
 /* ── Form fields ── */
@@ -137,4 +162,150 @@ ion-skeleton-text {
 .fab-blue {
   --background: linear-gradient(135deg, #1d4ed8, #7c3aed);
   --color: #fff;
+  --box-shadow: 0 4px 20px rgba(29,78,216,0.3);
 }
+
+/* ════════════════════════════════════════
+   OVERLAY — Action Sheet (IonSelect popups)
+   ════════════════════════════════════════ */
+ion-action-sheet {
+  --background:        #ffffff;
+  --color:             #1e293b;
+  --button-color:      #1e293b;
+  --button-color-selected: #1d4ed8;
+  --button-background-selected: #eff6ff;
+  --backdrop-opacity:  0.35;
+}
+/* Rounded top corners + slide-up animation */
+ion-action-sheet .action-sheet-wrapper {
+  border-radius: 24px 24px 0 0 !important;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  animation: overlaySlideUp 0.32s cubic-bezier(.22,1,.36,1) !important;
+}
+ion-action-sheet .action-sheet-group {
+  border-radius: 20px !important;
+  background: #fff !important;
+  margin: 6px 12px !important;
+  overflow: hidden;
+}
+ion-action-sheet .action-sheet-group:last-child {
+  margin-bottom: 12px !important;
+}
+ion-action-sheet .action-sheet-title {
+  color: #64748b !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  padding-top: 20px !important;
+}
+ion-action-sheet .action-sheet-button {
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: #1e293b !important;
+  --button-color: #1e293b;
+}
+ion-action-sheet .action-sheet-button.activated,
+ion-action-sheet .action-sheet-button:hover {
+  background: #f0f5ff !important;
+}
+ion-action-sheet .action-sheet-cancel .button-inner {
+  color: #dc2626 !important;
+  font-weight: 600 !important;
+}
+
+/* ════════════════════════════════
+   OVERLAY — Alert (IonAlert)
+   ════════════════════════════════ */
+ion-alert {
+  --backdrop-opacity: 0.35;
+}
+ion-alert .alert-wrapper {
+  border-radius: 24px !important;
+  background: #ffffff !important;
+  box-shadow: 0 20px 60px rgba(30,41,59,0.18) !important;
+  animation: overlayFadeScale 0.28s cubic-bezier(.22,1,.36,1) !important;
+  overflow: hidden;
+}
+ion-alert .alert-head {
+  padding: 24px 24px 8px !important;
+}
+ion-alert .alert-title {
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  color: #1e293b !important;
+}
+ion-alert .alert-message {
+  font-size: 14px !important;
+  color: #64748b !important;
+  padding: 0 24px 16px !important;
+  line-height: 1.6 !important;
+}
+ion-alert .alert-button-group {
+  padding: 8px 16px 16px !important;
+  gap: 8px;
+  display: flex;
+}
+ion-alert .alert-button {
+  border-radius: 12px !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+ion-alert .alert-button.ion-focused,
+ion-alert .alert-button:hover {
+  background: #f0f5ff !important;
+}
+
+/* ════════════════════════════════
+   OVERLAY — Modal (IonModal)
+   ════════════════════════════════ */
+ion-modal {
+  --backdrop-opacity: 0.35;
+}
+ion-modal .modal-wrapper {
+  animation: overlaySlideUp 0.34s cubic-bezier(.22,1,.36,1) !important;
+}
+
+/* ════════════════════════════════
+   OVERLAY — Loading (IonLoading)
+   ════════════════════════════════ */
+ion-loading {
+  --backdrop-opacity: 0.25;
+}
+ion-loading .loading-wrapper {
+  border-radius: 20px !important;
+  background: #ffffff !important;
+  box-shadow: 0 12px 40px rgba(30,41,59,0.16) !important;
+  padding: 24px 32px !important;
+  animation: overlayFadeScale 0.25s cubic-bezier(.22,1,.36,1) !important;
+}
+ion-loading .loading-content {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #1e293b !important;
+  margin-top: 12px !important;
+}
+ion-loading ion-spinner {
+  color: #1d4ed8 !important;
+  width: 36px !important;
+  height: 36px !important;
+}
+
+/* ════════════════════════════════
+   Shared overlay keyframes
+   ════════════════════════════════ */
+@keyframes overlaySlideUp {
+  from { opacity: 0; transform: translateY(48px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes overlayFadeScale {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── Smooth scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: rgba(30,41,59,0.15); border-radius: 99px; }
+::-webkit-scrollbar-track { background: transparent; }

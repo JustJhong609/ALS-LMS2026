@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact } from '@ionic/react';
+import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
@@ -9,7 +9,6 @@ import RegisterPage      from './pages/Register';
 import StudentTabs       from './pages/student/StudentTabs';
 import TeacherTabs       from './pages/teacher/TeacherTabs';
 import AdminTabs         from './pages/admin/AdminTabs';
-import SideMenu          from './components/SideMenu';
 
 setupIonicReact();
 
@@ -48,32 +47,29 @@ const App: React.FC = () => {
       <IonApp>
         <IonReactRouter>
           {user ? (
-            <IonSplitPane contentId="main-content">
-              <SideMenu />
-              <IonRouterOutlet id="main-content">
-                <Switch>
-                  {user.role === 'student' && (
-                    <Route path="/student" render={() => <StudentTabs />} />
-                  )}
-                  {user.role === 'teacher' && (
-                    <Route path="/teacher" render={() => <TeacherTabs />} />
-                  )}
-                  {user.role === 'admin' && (
-                    <Route path="/admin" render={() => <AdminTabs />} />
-                  )}
-                  <Redirect
-                    exact
-                    from="/"
-                    to={
-                      user.role === 'student' ? '/student/dashboard'
-                      : user.role === 'teacher' ? '/teacher/dashboard'
-                      : '/admin/dashboard'
-                    }
-                  />
-                  <Redirect to={user.role === 'student' ? '/student/dashboard' : user.role === 'teacher' ? '/teacher/dashboard' : '/admin/dashboard'} />
-                </Switch>
-              </IonRouterOutlet>
-            </IonSplitPane>
+            <IonRouterOutlet>
+              <Switch>
+                {user.role === 'student' && (
+                  <Route path="/student" render={() => <StudentTabs />} />
+                )}
+                {user.role === 'teacher' && (
+                  <Route path="/teacher" render={() => <TeacherTabs />} />
+                )}
+                {user.role === 'admin' && (
+                  <Route path="/admin" render={() => <AdminTabs />} />
+                )}
+                <Redirect
+                  exact
+                  from="/"
+                  to={
+                    user.role === 'student' ? '/student/dashboard'
+                    : user.role === 'teacher' ? '/teacher/dashboard'
+                    : '/admin/dashboard'
+                  }
+                />
+                <Redirect to={user.role === 'student' ? '/student/dashboard' : user.role === 'teacher' ? '/teacher/dashboard' : '/admin/dashboard'} />
+              </Switch>
+            </IonRouterOutlet>
           ) : (
             <IonRouterOutlet>
               <Route exact path="/"        component={WelcomePage} />

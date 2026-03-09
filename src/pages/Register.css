@@ -1,6 +1,21 @@
-/* Register Page Styles */
+/* Register Page Styles — Modern & Smooth */
 
 .register-content { --background: #f0f5ff; }
+
+/* ── Smooth step transitions ── */
+.step-animate {
+  animation: fadeSlide 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+.animate-shake { animation: shake 0.4s ease; }
 
 /* ── Top bar ── */
 .reg-topbar {
@@ -15,28 +30,40 @@
   align-items: center;
   justify-content: center;
   width: 40px; height: 40px;
-  border-radius: 12px;
+  border-radius: 14px;
   background: #fff;
   border: none;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(30,41,59,0.10);
+  box-shadow: 0 2px 10px rgba(30,41,59,0.10);
   color: #1d4ed8;
   font-size: 22px;
   overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
+.back-btn:active { transform: scale(0.92); }
 .step-dots { display: flex; gap: 6px; }
 .step-dot {
   width: 28px; height: 6px;
   border-radius: 99px;
   background: #e2e8f0;
-  transition: background 0.3s;
+  transition: background 0.4s, width 0.4s;
 }
-.step-dot.active { background: #1d4ed8; }
+.step-dot.active { background: #1d4ed8; width: 36px; }
 
 /* ── Header ── */
 .reg-header { padding: 20px 24px 8px; }
 .reg-title { font-size: 26px; font-weight: 800; color: #1e293b; margin: 0 0 4px; }
 .reg-sub { font-size: 14px; color: #64748b; margin: 0; }
+.reg-district-badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 14px;
+  border-radius: 99px;
+  background: linear-gradient(135deg, #dbeafe, #ede9fe);
+  font-size: 12px;
+  font-weight: 700;
+  color: #1d4ed8;
+}
 
 /* ── Body ── */
 .reg-body { padding: 20px 24px 48px; display: flex; flex-direction: column; gap: 4px; }
@@ -45,8 +72,8 @@
 .reg-role-btn {
   position: relative;
   flex: 1;
-  padding: 14px;
-  border-radius: 14px;
+  padding: 16px;
+  border-radius: 16px;
   border: 2px solid #e2e8f0;
   background: #fff;
   font-size: 14px;
@@ -54,9 +81,15 @@
   color: #334155;
   cursor: pointer;
   overflow: hidden;
-  transition: all 0.2s;
+  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.reg-role-btn.active { border-color: #1d4ed8; background: #eff6ff; color: #1d4ed8; }
+.reg-role-btn:active { transform: scale(0.96); }
+.reg-role-btn.active {
+  border-color: #1d4ed8;
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  color: #1d4ed8;
+  box-shadow: 0 4px 16px rgba(29,78,216,0.15);
+}
 
 .reg-row { display: flex; gap: 10px; }
 .form-group { margin-bottom: 16px; }
@@ -69,79 +102,80 @@
   align-items: center;
   background: #fff;
   border: 1.5px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 0 12px;
-  box-shadow: 0 1px 4px rgba(30,41,59,0.06);
-  transition: border-color 0.2s;
+  border-radius: 14px;
+  padding: 0 14px;
+  box-shadow: 0 1px 6px rgba(30,41,59,0.06);
+  transition: border-color 0.25s, box-shadow 0.25s;
 }
 .input-wrap:focus-within { border-color: #1d4ed8; box-shadow: 0 0 0 3px rgba(29,78,216,0.12); }
-.input-icon { font-size: 18px; color: #94a3b8; margin-right: 8px; flex-shrink: 0; }
+.input-icon { font-size: 18px; color: #94a3b8; margin-right: 10px; flex-shrink: 0; transition: color 0.2s; }
+.input-wrap:focus-within .input-icon { color: #1d4ed8; }
 .als-field {
   flex: 1;
-  --padding-top: 12px;
-  --padding-bottom: 12px;
+  --padding-top: 14px;
+  --padding-bottom: 14px;
   --background: transparent;
   --color: #1e293b;
-  --placeholder-color: #94a3b8;
+  --placeholder-color: #1e3a8a;
+  --placeholder-opacity: 0.6;
   font-size: 15px;
+}
+
+/* ── IonSelect inside input-wrap ── */
+.als-select {
+  --padding-top: 14px;
+  --padding-bottom: 14px;
+  --placeholder-color: #1e3a8a;
+  --placeholder-opacity: 0.6;
+  --color: #1e293b;
+  width: 100%;
+}
+
+/* ── District note ── */
+.district-note {
+  font-size: 12px;
+  color: #1d4ed8;
+  font-weight: 600;
+  margin: 6px 0 0;
+  padding-left: 2px;
 }
 
 /* ── PW Strength ── */
 .pw-strength { margin-top: -4px; margin-bottom: 16px; }
 .pw-bars { display: flex; gap: 6px; margin-bottom: 6px; }
-.pw-bar { flex: 1; height: 6px; border-radius: 99px; background: #e2e8f0; transition: background 0.3s; }
-.pw-bar.filled { background: linear-gradient(90deg, #1d4ed8, #16a34a); }
+.pw-bar { flex: 1; height: 6px; border-radius: 99px; background: #e2e8f0; transition: background 0.4s, transform 0.3s; }
+.pw-bar.filled { background: linear-gradient(90deg, #1d4ed8, #16a34a); transform: scaleY(1.2); }
 .pw-hint { font-size: 12px; color: #64748b; margin: 0; }
-
-/* ── Level list ── */
-.level-list { display: flex; flex-direction: column; gap: 8px; }
-.level-item {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 16px;
-  background: #fff;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 12px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #334155;
-  cursor: pointer;
-  text-align: left;
-  overflow: hidden;
-  transition: all 0.2s;
-}
-.level-item.active { border-color: #1d4ed8; background: #eff6ff; color: #1d4ed8; font-weight: 700; }
-.level-item ion-icon { font-size: 20px; flex-shrink: 0; }
-.level-check { margin-left: auto; font-size: 16px; color: #16a34a; }
 
 /* ── Review card ── */
 .review-card {
   background: #fff;
-  border-radius: 16px;
+  border-radius: 18px;
   padding: 20px;
-  box-shadow: 0 2px 12px rgba(30,41,59,0.08);
+  box-shadow: 0 2px 16px rgba(30,41,59,0.08);
   margin-top: 8px;
 }
 .review-title { font-size: 14px; font-weight: 700; color: #1e293b; margin: 0 0 14px; }
-.review-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 14px; color: #64748b; }
+.review-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-size: 14px; color: #64748b; }
 .review-row:last-child { border-bottom: none; }
 .review-row strong { color: #1e293b; }
 
 /* ── Error ── */
-.error-box { background: #fee2e2; color: #dc2626; border-radius: 10px; padding: 10px 14px; font-size: 13px; margin-bottom: 8px; }
+.error-box { background: #fee2e2; color: #dc2626; border-radius: 12px; padding: 12px 16px; font-size: 13px; margin-bottom: 8px; font-weight: 500; }
 
 /* ── Buttons ── */
 .next-btn {
   --background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
   --color: #fff;
-  --border-radius: 14px;
-  height: 52px;
+  --border-radius: 16px;
+  --box-shadow: 0 4px 20px rgba(29,78,216,0.25);
+  height: 54px;
   font-size: 16px;
   font-weight: 700;
   margin: 12px 0 0;
+  transition: transform 0.2s;
 }
+.next-btn:active { transform: scale(0.97); }
 .login-link { text-align: center; font-size: 14px; color: #64748b; margin-top: 20px; }
 .link-btn { background: none; border: none; color: #1d4ed8; font-weight: 700; font-size: 14px; cursor: pointer; padding: 0; }
 
@@ -154,15 +188,21 @@
   height: 100%;
   padding: 48px 32px;
   text-align: center;
+  animation: fadeSlide 0.5s ease;
 }
 .success-icon { font-size: 72px; margin-bottom: 20px; }
 .success-title { font-size: 28px; font-weight: 800; color: #1e293b; margin: 0 0 12px; }
 .success-sub { font-size: 15px; color: #64748b; line-height: 1.6; margin: 0 0 32px; }
 .success-btn {
   --background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
-  --border-radius: 14px;
-  height: 52px;
+  --border-radius: 16px;
+  --box-shadow: 0 4px 20px rgba(29,78,216,0.25);
+  height: 54px;
   font-weight: 700;
   font-size: 16px;
   width: 100%;
 }
+
+/* ── Ionic overlay styling ── */
+.als-loading { --border-radius: 16px; --box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+.als-alert .alert-wrapper { border-radius: 20px !important; }

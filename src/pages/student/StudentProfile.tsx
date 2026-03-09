@@ -8,6 +8,7 @@ import {
   notificationsOutline, shieldCheckmarkOutline, helpCircleOutline,
   logOutOutline, chevronForward, createOutline, trophyOutline,
 } from 'ionicons/icons';
+import { useHistory } from 'react-router-dom';
 import { useAuth } from '../../App';
 import './StudentProfile.css';
 
@@ -17,8 +18,14 @@ const LESSONS_DONE = 45;
 
 const StudentProfile: React.FC = () => {
   const { user, logout } = useAuth();
+  const history = useHistory();
   const [notifOn, setNotifOn]   = useState(true);
   const [showAlert, setShowAlert] = useState(false);
+
+  const handleLogout = () => {
+    logout();
+    history.replace('/');
+  };
 
   const menuItems = [
     { icon: createOutline,         label: 'Edit Profile',         color: '#1d4ed8' },
@@ -129,7 +136,7 @@ const StudentProfile: React.FC = () => {
           message="Are you sure you want to sign out?"
           buttons={[
             { text: 'Cancel', role: 'cancel' },
-            { text: 'Sign Out', role: 'destructive', handler: logout },
+            { text: 'Sign Out', role: 'destructive', handler: handleLogout },
           ]}
           onDidDismiss={() => setShowAlert(false)}
         />

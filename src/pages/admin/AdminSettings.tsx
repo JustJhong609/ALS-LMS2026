@@ -6,11 +6,15 @@ import {
 } from '@ionic/react';
 import {
   globeOutline, notificationsOutline, lockClosedOutline, colorPaletteOutline,
-  cloudUploadOutline, trashOutline, checkmarkCircleOutline,
+  cloudUploadOutline, trashOutline, checkmarkCircleOutline, logOutOutline,
 } from 'ionicons/icons';
+import { useHistory } from 'react-router-dom';
+import { useAuth } from '../../App';
 import './AdminSettings.css';
 
 const AdminSettings: React.FC = () => {
+  const { logout } = useAuth();
+  const history = useHistory();
   const [emailNotifs,  setEmailNotifs]  = useState(true);
   const [smsNotifs,    setSmsNotifs]    = useState(false);
   const [pushNotifs,   setPushNotifs]   = useState(true);
@@ -22,8 +26,14 @@ const AdminSettings: React.FC = () => {
   const [maxUpload,    setMaxUpload]    = useState('50');
   const [showSaveAlert, setShowSaveAlert] = useState(false);
   const [showResetAlert, setShowResetAlert] = useState(false);
+  const [showLogoutAlert, setShowLogoutAlert] = useState(false);
 
   const save = () => setShowSaveAlert(true);
+
+  const handleLogout = () => {
+    logout();
+    history.replace('/');
+  };
 
   return (
     <IonPage>
@@ -149,8 +159,24 @@ const AdminSettings: React.FC = () => {
             <IonIcon icon={trashOutline} />
             Reset to Defaults
           </button>
+
+          <button className="as-logout-btn ion-activatable" onClick={() => setShowLogoutAlert(true)}>
+            <IonRippleEffect />
+            <IonIcon icon={logOutOutline} />
+            Sign Out
+          </button>
         </div>
 
+        <IonAlert
+          isOpen={showLogoutAlert}
+          onDidDismiss={() => setShowLogoutAlert(false)}
+          header="Sign Out"
+          message="Are you sure you want to sign out?"
+          buttons={[
+            { text: 'Cancel', role: 'cancel' },
+            { text: 'Sign Out', role: 'destructive', handler: handleLogout },
+          ]}
+        />
         <IonAlert
           isOpen={showSaveAlert}
           onDidDismiss={() => setShowSaveAlert(false)}

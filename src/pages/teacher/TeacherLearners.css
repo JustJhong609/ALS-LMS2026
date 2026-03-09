@@ -1,30 +1,32 @@
-/* Teacher Learners */
+/* Teacher Learners — Modern & Smooth */
 .learners-content { --background: #f0f5ff; }
 .als-header ion-toolbar { --background: linear-gradient(135deg, #14532d 0%, #16a34a 100%); }
 .toolbar-title-green { color: #fff !important; font-weight: 800; font-size: 20px; }
 
 .learners-top { padding: 16px 16px 0; }
-.als-searchbar-green { --background: #fff; --border-radius: 12px; --box-shadow: 0 2px 8px rgba(30,41,59,0.08); --color: #1e293b; --placeholder-color: #94a3b8; padding: 0 !important; }
+.als-searchbar-green { --background: #fff; --border-radius: 14px; --box-shadow: 0 2px 10px rgba(30,41,59,0.08); --color: #1e293b; --placeholder-color: #1e3a8a; --placeholder-opacity: 0.6; padding: 0 !important; }
 
-.learners-body  { padding: 12px 16px 24px; }
+.learners-body  { padding: 12px 16px 100px; }
 .learners-count { font-size: 12px; color: #94a3b8; font-weight: 600; margin: 0 0 14px; text-transform: uppercase; letter-spacing: 0.5px; }
 
 .learner-card {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 14px;
   background: #fff;
-  border-radius: 14px;
-  padding: 14px 16px;
-  box-shadow: 0 2px 8px rgba(30,41,59,0.07);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(30,41,59,0.07);
   margin-bottom: 10px;
   cursor: pointer;
   overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
+.learner-card:active { transform: scale(0.98); }
 .learner-avatar {
   width: 48px; height: 48px;
-  border-radius: 50%;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,7 +37,18 @@
 }
 .learner-info { flex: 1; min-width: 0; }
 .learner-name  { font-size: 14px; font-weight: 700; color: #1e293b; margin: 0 0 2px; }
-.learner-level { font-size: 11px; color: #94a3b8; margin: 0 0 6px; font-weight: 600; }
+.learner-level { font-size: 11px; color: #64748b; margin: 0 0 6px; font-weight: 600; }
+
+.learner-meta-chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 6px; }
+.learner-chip {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: #f1f5f9;
+  color: #475569;
+}
+
 .learner-progress-row { display: flex; align-items: center; gap: 8px; }
 .als-progress-track { background: #e2e8f0; border-radius: 99px; height: 6px; overflow: hidden; }
 .als-progress-fill  { height: 100%; border-radius: 99px; transition: width 0.6s; }
@@ -44,8 +57,75 @@
 .learner-status {
   font-size: 11px;
   font-weight: 700;
-  padding: 3px 8px;
+  padding: 3px 10px;
   border-radius: 99px;
 }
 .learner-status.active   { color: #16a34a; background: #dcfce7; }
 .learner-status.inactive { color: #94a3b8; background: #f1f5f9; }
+
+/* ── FAB ── */
+.fab-green { --background: linear-gradient(135deg, #16a34a, #14532d); --color: #fff; --box-shadow: 0 4px 20px rgba(22,163,74,0.35); }
+
+/* ── Modal ── */
+.add-student-modal {
+  --border-radius: 20px 20px 0 0;
+  --box-shadow: 0 -8px 40px rgba(0,0,0,0.12);
+}
+.modal-toolbar {
+  --background: transparent;
+  --color: #1e293b;
+  padding-top: 8px;
+}
+.modal-title { font-size: 18px; font-weight: 800; color: #1e293b; }
+.modal-content { --background: #f0f5ff; }
+.modal-body { padding: 16px 20px 40px; display: flex; flex-direction: column; gap: 4px; }
+.modal-district-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 99px;
+  background: linear-gradient(135deg, #dcfce7, #dbeafe);
+  font-size: 12px;
+  font-weight: 700;
+  color: #16a34a;
+  margin-bottom: 12px;
+  align-self: flex-start;
+}
+.modal-row { display: flex; gap: 10px; }
+
+/* Reuse form styles */
+.modal-body .form-group { margin-bottom: 14px; }
+.modal-body .form-group.half { flex: 1; }
+.modal-body .field-label { font-size: 13px; font-weight: 600; color: #475569; margin: 0 0 6px; }
+.modal-body .req { color: #dc2626; }
+.modal-body .input-wrap {
+  display: flex; align-items: center; background: #fff;
+  border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 0 14px;
+  box-shadow: 0 1px 6px rgba(30,41,59,0.06); transition: border-color 0.25s, box-shadow 0.25s;
+}
+.modal-body .input-wrap:focus-within { border-color: #16a34a; box-shadow: 0 0 0 3px rgba(22,163,74,0.12); }
+.modal-body .input-icon { font-size: 18px; color: #94a3b8; margin-right: 10px; flex-shrink: 0; }
+.modal-body .als-field {
+  flex: 1; --padding-top: 13px; --padding-bottom: 13px;
+  --background: transparent; --color: #1e293b;
+  --placeholder-color: #1e3a8a; --placeholder-opacity: 0.6; font-size: 15px;
+}
+.modal-body .als-select {
+  --padding-top: 13px; --padding-bottom: 13px;
+  --placeholder-color: #1e3a8a; --placeholder-opacity: 0.6;
+  --color: #1e293b; width: 100%;
+}
+
+.modal-save-btn {
+  --background: linear-gradient(135deg, #14532d, #16a34a);
+  --color: #fff;
+  --border-radius: 16px;
+  --box-shadow: 0 4px 20px rgba(22,163,74,0.25);
+  height: 54px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 12px;
+}
+
+/* ── Ionic overlay ── */
+.als-loading { --border-radius: 16px; --box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+.als-alert .alert-wrapper { border-radius: 20px !important; }

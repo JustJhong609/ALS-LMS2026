@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
 import { IonPage, IonHeader, IonToolbar, IonContent, IonIcon, IonToggle, IonRippleEffect, IonAlert } from '@ionic/react';
 import { createOutline, settingsOutline, notificationsOutline, helpCircleOutline, logOutOutline, chevronForward, bookOutline, peopleOutline } from 'ionicons/icons';
+import { useHistory } from 'react-router-dom';
 import { useAuth } from '../../App';
 import './TeacherProfile.css';
 
 const TeacherProfile: React.FC = () => {
   const { user, logout } = useAuth();
+  const history = useHistory();
   const [notifOn, setNotifOn] = useState(true);
   const [showAlert, setShowAlert] = useState(false);
+
+  const handleLogout = () => {
+    logout();
+    history.replace('/');
+  };
 
   const menu = [
     { icon: createOutline,        label: 'Edit Profile',       color: '#16a34a' },
@@ -71,7 +78,7 @@ const TeacherProfile: React.FC = () => {
           <p className="app-ver">ALS-LMS 2026 · v1.0.0</p>
         </div>
 
-        <IonAlert isOpen={showAlert} header="Sign Out" message="Are you sure?" buttons={[{ text: 'Cancel', role: 'cancel' }, { text: 'Sign Out', role: 'destructive', handler: logout }]} onDidDismiss={() => setShowAlert(false)} />
+        <IonAlert isOpen={showAlert} header="Sign Out" message="Are you sure?" buttons={[{ text: 'Cancel', role: 'cancel' }, { text: 'Sign Out', role: 'destructive', handler: handleLogout }]} onDidDismiss={() => setShowAlert(false)} />
       </IonContent>
     </IonPage>
   );
