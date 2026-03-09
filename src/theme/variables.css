@@ -72,20 +72,5 @@
 }
 
 /* Dark mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --ion-background-color:      #0f172a;
-    --ion-background-color-rgb:  15,23,42;
-    --ion-text-color:            #e2e8f0;
-    --ion-text-color-rgb:        226,232,240;
-    --ion-card-background:       #1e293b;
-    --ion-item-background:       #1e293b;
-    --ion-tab-bar-background:    #1e293b;
-    --ion-tab-bar-color:         #64748b;
-    --als-blue-light:            #1e3a8a;
-    --als-green-light:           #14532d;
-    --als-amber-light:           #451a03;
-    --als-red-light:             #450a0a;
-    --als-purple-light:          #2e1065;
-  }
-}
+/* Dark mode intentionally disabled — ALS LMS uses light theme only */
+

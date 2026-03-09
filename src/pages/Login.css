@@ -1,37 +1,28 @@
-/* Login Page Styles */
+/* Login Page Styles — Mobile-First */
 
 .login-content {
   --background: #f0f5ff;
 }
 
-/* ── Top bar ── */
-.login-topbar {
-  padding: 16px 16px 0;
-}
-.back-btn {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px; height: 40px;
-  border-radius: 12px;
-  background: #fff;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(30,41,59,0.10);
-  color: #1d4ed8;
-  font-size: 22px;
-  overflow: hidden;
-}
-
 /* ── Header ── */
 .login-header {
   text-align: center;
-  padding: 24px 20px 12px;
+  padding: calc(env(safe-area-inset-top, 0px) + 40px) 20px 12px;
 }
 .login-logo {
-  font-size: 52px;
-  margin-bottom: 12px;
+  width: 68px;
+  height: 68px;
+  background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+  box-shadow: 0 4px 20px rgba(29,78,216,0.25);
+}
+.logo-ion-icon {
+  font-size: 34px;
+  color: #fff;
 }
 .login-title {
   font-size: 26px;
@@ -53,34 +44,26 @@
   gap: 4px;
 }
 
-/* ── Role Cards ── */
-.role-cards {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-.role-card {
-  flex: 1;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  padding: 14px 8px;
-  border-radius: 14px;
-  border: 2px solid #e2e8f0;
-  background: #fff;
+/* ── Role Dropdown ── */
+.role-select-wrap {
   cursor: pointer;
-  overflow: hidden;
-  transition: border-color 0.2s, box-shadow 0.2s;
 }
-.role-card--active {
-  border-color: var(--role-color, #1d4ed8);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--role-color, #1d4ed8) 15%, transparent);
-  background: color-mix(in srgb, var(--role-color, #1d4ed8) 6%, #fff);
+.als-select {
+  flex: 1;
+  --padding-top: 14px;
+  --padding-bottom: 14px;
+  --placeholder-color: #1e3a8a;
+  --placeholder-opacity: 0.6;
+  --color: #1e293b;
+  font-size: 15px;
+  font-weight: 600;
 }
-.role-icon { font-size: 26px; }
-.role-label { font-size: 11px; font-weight: 700; color: #334155; text-transform: uppercase; letter-spacing: 0.5px; }
+.select-caret {
+  font-size: 14px;
+  color: #94a3b8;
+  flex-shrink: 0;
+  pointer-events: none;
+}
 
 /* ── Fields ── */
 .form-group { margin-bottom: 16px; }
@@ -111,10 +94,10 @@
   align-items: center;
   background: #fff;
   border: 1.5px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 0 12px;
-  box-shadow: 0 1px 4px rgba(30,41,59,0.06);
-  transition: border-color 0.2s;
+  border-radius: 14px;
+  padding: 0 14px;
+  box-shadow: 0 1px 6px rgba(30,41,59,0.06);
+  transition: border-color 0.25s, box-shadow 0.25s;
 }
 .input-wrap:focus-within {
   border-color: #1d4ed8;
@@ -123,16 +106,19 @@
 .input-icon {
   font-size: 18px;
   color: #94a3b8;
-  margin-right: 8px;
+  margin-right: 10px;
   flex-shrink: 0;
+  transition: color 0.2s;
 }
+.input-wrap:focus-within .input-icon { color: #1d4ed8; }
 .als-field {
   flex: 1;
-  --padding-top: 12px;
-  --padding-bottom: 12px;
+  --padding-top: 14px;
+  --padding-bottom: 14px;
   --background: transparent;
   --color: #1e293b;
-  --placeholder-color: #94a3b8;
+  --placeholder-color: #1e3a8a;
+  --placeholder-opacity: 0.6;
   font-size: 15px;
 }
 
@@ -151,12 +137,15 @@
 .login-btn {
   --background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
   --color: #fff;
-  --border-radius: 14px;
-  height: 52px;
+  --border-radius: 16px;
+  --box-shadow: 0 4px 20px rgba(29,78,216,0.25);
+  height: 54px;
   font-size: 16px;
   font-weight: 700;
   margin: 8px 0 0;
+  transition: transform 0.2s;
 }
+.login-btn:active { transform: scale(0.97); }
 
 /* ── Demo ── */
 .demo-section {
@@ -180,14 +169,16 @@
   background: #fff;
   border: 1.5px solid #e2e8f0;
   border-radius: 99px;
-  padding: 7px 16px;
+  padding: 8px 18px;
   font-size: 13px;
   font-weight: 600;
   color: #334155;
   cursor: pointer;
   overflow: hidden;
+  transition: all 0.2s;
 }
-.demo-pill:hover { border-color: #1d4ed8; color: #1d4ed8; }
+.demo-pill:active { transform: scale(0.94); }
+.demo-pill:hover { border-color: #1d4ed8; color: #1d4ed8; box-shadow: 0 2px 10px rgba(29,78,216,0.12); }
 
 /* ── Register link ── */
 .register-link {
@@ -205,3 +196,7 @@
   cursor: pointer;
   padding: 0;
 }
+
+/* ── Ionic overlay styling ── */
+.als-loading { --border-radius: 16px; --box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+.als-alert .alert-wrapper { border-radius: 20px !important; }

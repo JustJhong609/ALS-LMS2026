@@ -16,7 +16,7 @@
 
 .as-body {
   padding: 16px;
-  padding-bottom: 40px;
+  padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px) + 32px);
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -135,7 +135,7 @@
 }
 
 /* Action buttons */
-.as-save-btn, .as-reset-btn {
+.as-save-btn, .as-reset-btn, .as-logout-btn {
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -150,7 +150,9 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  transition: transform 0.15s;
 }
+.as-save-btn:active, .as-reset-btn:active, .as-logout-btn:active { transform: scale(0.97); }
 
 .as-save-btn {
   background: linear-gradient(135deg, #7c3aed, #6d28d9);
@@ -161,4 +163,10 @@
   background: #fff;
   color: #dc2626;
   border: 1.5px solid #fecaca;
+}
+
+.as-logout-btn {
+  background: #fee2e2;
+  color: #dc2626;
+  margin-top: 24px;
 }
