@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact } from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
+import { IonReactHashRouter } from '@ionic/react-router';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import WelcomePage       from './pages/Welcome';
@@ -46,7 +46,7 @@ const App: React.FC = () => {
   return (
     <AuthContext.Provider value={{ user, login, logout }}>
       <IonApp>
-        <IonReactRouter>
+        <IonReactHashRouter>
           {user ? (
             <IonSplitPane contentId="main-content">
               <SideMenu />
@@ -82,7 +82,7 @@ const App: React.FC = () => {
               <Redirect to="/" />
             </IonRouterOutlet>
           )}
-        </IonReactRouter>
+        </IonReactHashRouter>
       </IonApp>
     </AuthContext.Provider>
   );
