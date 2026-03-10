@@ -1,0 +1,34 @@
+.imp-res-content { --background: #f8fafc; }
+.imp-res-body { padding: 16px; }
+.imp-res-hint { font-size: 12px; color: #94a3b8; margin-bottom: 16px; line-height: 1.5; }
+
+.imp-res-card {
+  background: #fff; border-radius: 14px; padding: 14px; margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; gap: 12px; align-items: flex-start;
+}
+.imp-res-card.material { border-left: 4px solid #1d4ed8; }
+.imp-res-card.schedule { border-left: 4px solid #16a34a; }
+.imp-res-icon { font-size: 22px; color: #64748b; margin-top: 2px; }
+.imp-res-info { flex: 1; }
+.imp-res-type-badge {
+  font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 6px; display: inline-block;
+}
+.imp-res-type-badge.material { background: #eff6ff; color: #1d4ed8; }
+.imp-res-type-badge.schedule { background: #f0fdf4; color: #16a34a; }
+.imp-res-title { font-size: 14px; font-weight: 700; color: #1e293b; margin-top: 4px; }
+.imp-res-desc { font-size: 12px; color: #64748b; margin-top: 4px; line-height: 1.4; }
+.imp-res-date { font-size: 11px; color: #94a3b8; margin-top: 4px; }
+
+.fab-amber {
+  --background: #d97706 !important; --background-activated: #b45309 !important;
+  --box-shadow: 0 4px 16px rgba(217,119,6,0.4);
+}
+
+.type-toggle-row {
+  display: flex; gap: 8px; margin-bottom: 16px;
+}
+.type-btn {
+  flex: 1; padding: 10px; border-radius: 10px; border: 2px solid #e2e8f0;
+  background: #fff; font-size: 13px; font-weight: 700; color: #64748b; cursor: pointer;
+}
+.type-btn.active { border-color: #d97706; background: #fffbeb; color: #d97706; }

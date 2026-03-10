@@ -5,23 +5,23 @@ import {
 import { Route, Redirect } from 'react-router-dom';
 import {
   homeOutline, home, peopleOutline, people,
-  documentTextOutline, documentText, statsChartOutline, statsChart, personOutline, person,
+  analyticsOutline, analytics, statsChartOutline, statsChart, personOutline, person,
 } from 'ionicons/icons';
 
-import TeacherDashboard from './TeacherDashboard';
-import TeacherLearners  from './TeacherLearners';
-import TeacherGrading   from './TeacherGrading';
-import TeacherReports   from './TeacherReports';
-import TeacherProfile   from './TeacherProfile';
+import TeacherDashboard    from './TeacherDashboard';
+import TeacherImplementers from './TeacherImplementers';
+import TeacherFLT          from './TeacherFLT';
+import TeacherReports      from './TeacherReports';
+import TeacherProfile      from './TeacherProfile';
 
 const TeacherTabs: React.FC = () => (
   <IonTabs>
     <IonRouterOutlet>
-      <Route exact path="/teacher/dashboard"  component={TeacherDashboard} />
-      <Route exact path="/teacher/learners"   component={TeacherLearners} />
-      <Route exact path="/teacher/grading"    component={TeacherGrading} />
-      <Route exact path="/teacher/reports"    component={TeacherReports} />
-      <Route exact path="/teacher/profile"    component={TeacherProfile} />
+      <Route exact path="/teacher/dashboard"     component={TeacherDashboard} />
+      <Route exact path="/teacher/implementers"  component={TeacherImplementers} />
+      <Route exact path="/teacher/flt"           component={TeacherFLT} />
+      <Route exact path="/teacher/reports"       component={TeacherReports} />
+      <Route exact path="/teacher/profile"       component={TeacherProfile} />
       <Redirect exact from="/teacher" to="/teacher/dashboard" />
     </IonRouterOutlet>
 
@@ -30,13 +30,13 @@ const TeacherTabs: React.FC = () => (
         <IonIcon ios={homeOutline} md={home} />
         <IonLabel>Home</IonLabel>
       </IonTabButton>
-      <IonTabButton tab="learners" href="/teacher/learners">
+      <IonTabButton tab="implementers" href="/teacher/implementers">
         <IonIcon ios={peopleOutline} md={people} />
-        <IonLabel>Learners</IonLabel>
+        <IonLabel>Implementers</IonLabel>
       </IonTabButton>
-      <IonTabButton tab="grading" href="/teacher/grading">
-        <IonIcon ios={documentTextOutline} md={documentText} />
-        <IonLabel>Grading</IonLabel>
+      <IonTabButton tab="flt" href="/teacher/flt">
+        <IonIcon ios={analyticsOutline} md={analytics} />
+        <IonLabel>FLT</IonLabel>
       </IonTabButton>
       <IonTabButton tab="reports" href="/teacher/reports">
         <IonIcon ios={statsChartOutline} md={statsChart} />

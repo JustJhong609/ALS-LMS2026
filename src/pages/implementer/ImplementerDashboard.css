@@ -1,0 +1,58 @@
+.imp-dash-toolbar {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding: 12px 20px 16px;
+}
+.imp-badge { background: #d97706 !important; color: #fff !important; }
+.imp-dash-content { --background: #f8fafc; }
+.imp-dash-body { padding: 0 16px 32px; }
+
+.imp-stats {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
+  margin-bottom: 20px;
+}
+.imp-stat-card {
+  background: #fff; border-radius: 14px; padding: 14px; text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.imp-stat-num { font-size: 22px; font-weight: 800; color: #1e293b; }
+.imp-stat-lbl { font-size: 11px; color: #94a3b8; font-weight: 600; }
+
+.imp-section { margin-bottom: 20px; }
+.imp-section-row { display: flex; justify-content: space-between; align-items: center; }
+
+.imp-ann-list { display: flex; flex-direction: column; gap: 8px; }
+.imp-ann-item {
+  background: #fff; border-radius: 10px; padding: 12px 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.imp-ann-text { font-size: 13px; color: #1e293b; font-weight: 600; }
+
+.imp-learner-alert {
+  display: flex; align-items: center; gap: 12px;
+  background: #fef2f2; border-radius: 10px; padding: 12px; margin-bottom: 8px;
+  border-left: 4px solid #dc2626;
+}
+.imp-learner-card {
+  display: flex; align-items: center; gap: 12px;
+  background: #fff; border-radius: 12px; padding: 12px; margin-bottom: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.imp-learner-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: linear-gradient(135deg, #d97706, #b45309);
+  color: #fff; display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 13px; flex-shrink: 0;
+}
+.imp-learner-info { flex: 1; }
+.imp-learner-name { font-size: 14px; font-weight: 700; color: #1e293b; }
+.imp-learner-meta { font-size: 11px; color: #94a3b8; margin-top: 2px; }
+.imp-learner-pct { font-size: 14px; font-weight: 800; color: #d97706; }
+
+.imp-quick-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
+}
+.imp-quick-card {
+  background: #fff; border-radius: 14px; padding: 16px; text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06); position: relative; overflow: hidden; cursor: pointer;
+}
+.imp-quick-card p { font-size: 12px; font-weight: 600; color: #1e293b; margin-top: 6px; }

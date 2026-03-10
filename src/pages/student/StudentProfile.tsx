@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import {
   IonPage, IonHeader, IonToolbar, IonContent, IonIcon,
   IonList, IonItem, IonLabel, IonToggle, IonRippleEffect, IonAlert,
+  IonRange,
 } from '@ionic/react';
 import {
   personOutline, mailOutline, callOutline, schoolOutline, settingsOutline,
   notificationsOutline, shieldCheckmarkOutline, helpCircleOutline,
   logOutOutline, chevronForward, createOutline, trophyOutline,
+  contrastOutline, textOutline,
 } from 'ionicons/icons';
 import { useHistory } from 'react-router-dom';
 import { useAuth } from '../../App';
@@ -14,12 +16,14 @@ import './StudentProfile.css';
 
 const COURSES_DONE = 1;
 const BADGES_EARNED = 7;
-const LESSONS_DONE = 45;
+const MODULES_DONE = 54;
 
 const StudentProfile: React.FC = () => {
   const { user, logout } = useAuth();
   const history = useHistory();
   const [notifOn, setNotifOn]   = useState(true);
+  const [highContrast, setHighContrast] = useState(false);
+  const [fontSize, setFontSize] = useState(16);
   const [showAlert, setShowAlert] = useState(false);
 
   const handleLogout = () => {
@@ -57,10 +61,11 @@ const StudentProfile: React.FC = () => {
           </div>
           <h2 className="profile-name">{user?.name}</h2>
           <p className="profile-role">ALS Learner · {user?.grade}</p>
+          <p className="profile-district">District I — Manolo Fortich, Bukidnon</p>
           <div className="profile-stats-row">
             <div className="pstat">
               <span className="pstat-num">{COURSES_DONE}</span>
-              <span className="pstat-lbl">Completed</span>
+              <span className="pstat-lbl">Strands Done</span>
             </div>
             <div className="pstat-div" />
             <div className="pstat">
@@ -69,8 +74,8 @@ const StudentProfile: React.FC = () => {
             </div>
             <div className="pstat-div" />
             <div className="pstat">
-              <span className="pstat-num">{LESSONS_DONE}</span>
-              <span className="pstat-lbl">Lessons</span>
+              <span className="pstat-num">{MODULES_DONE}</span>
+              <span className="pstat-lbl">Modules</span>
             </div>
           </div>
         </div>
@@ -96,6 +101,42 @@ const StudentProfile: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* ── Accessibility Settings ── */}
+          <div className="info-card">
+            <p className="info-card-title">Accessibility Settings</p>
+
+            <div className="access-row">
+              <div className="access-icon-wrap" style={{ background: '#7c3aed18' }}>
+                <IonIcon icon={contrastOutline} style={{ color: '#7c3aed' }} />
+              </div>
+              <span className="access-label">High Contrast Mode</span>
+              <IonToggle
+                checked={highContrast}
+                onIonChange={(e) => setHighContrast(e.detail.checked)}
+                style={{ '--track-background': '#e2e8f0', '--track-background-checked': '#7c3aed' } as any}
+              />
+            </div>
+
+            <div className="access-row">
+              <div className="access-icon-wrap" style={{ background: '#1d4ed818' }}>
+                <IonIcon icon={textOutline} style={{ color: '#1d4ed8' }} />
+              </div>
+              <span className="access-label">Font Size: {fontSize}px</span>
+            </div>
+            <IonRange
+              min={12}
+              max={24}
+              step={1}
+              value={fontSize}
+              onIonInput={(e) => setFontSize(e.detail.value as number)}
+              className="font-range"
+              style={{ '--bar-background': '#e2e8f0', '--bar-background-active': '#1d4ed8', '--knob-background': '#1d4ed8' } as any}
+            />
+            <p className="access-hint" style={{ fontSize: `${fontSize}px` }}>
+              Preview: Ang ALS ay para sa lahat.
+            </p>
           </div>
 
           {/* ── Menu ── */}

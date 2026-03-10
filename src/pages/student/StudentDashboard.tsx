@@ -4,27 +4,37 @@ import {
   IonRefresherContent, IonSkeletonText, IonRippleEffect, IonIcon, IonBadge,
 } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
-import { notificationsOutline, chevronForward, trophyOutline, timeOutline, bookOutline, checkmarkCircle } from 'ionicons/icons';
+import { notificationsOutline, chevronForward, trophyOutline, timeOutline, bookOutline, checkmarkCircle, clipboardOutline } from 'ionicons/icons';
 import { useAuth } from '../../App';
 import './StudentDashboard.css';
 
 /* ── Mock data ── */
 const ANNOUNCEMENTS = [
-  { id: 1, title: 'ALS Accreditation & Equivalency Exam', date: 'Mar 15, 2026', type: 'alert', color: '#dc2626' },
-  { id: 2, title: 'New lesson modules are now available',  date: 'Mar 10, 2026', type: 'info',  color: '#1d4ed8' },
+  { id: 1, title: 'ALS A&E Exam Schedule — District I, Manolo Fortich', date: 'Mar 15, 2026', type: 'alert', color: '#dc2626' },
+  { id: 2, title: 'New LS 3 (Math) modules available for self-study',    date: 'Mar 10, 2026', type: 'info',  color: '#1d4ed8' },
+  { id: 3, title: 'Face-to-Face session at Brgy. San Miguel CLC',        date: 'Mar 13, 2026', type: 'info',  color: '#16a34a' },
 ];
 
-const ENROLLED_COURSES = [
-  { id: 'c1', subject: 'Communication Arts (Filipino)', progress: 72, lessons: 18, done: 13, color: '#1d4ed8', icon: '🇵🇭' },
-  { id: 'c2', subject: 'Communication Arts (English)',  progress: 55, lessons: 16, done: 9,  color: '#16a34a', icon: '🗣️' },
-  { id: 'c3', subject: 'Mathematics',                   progress: 88, lessons: 20, done: 17, color: '#7c3aed', icon: '🔢' },
-  { id: 'c4', subject: 'Science',                       progress: 40, lessons: 15, done: 6,  color: '#d97706', icon: '🔬' },
+const LEARNING_STRANDS = [
+  { id: 'ls1', subject: 'LS 1 — Communication Skills (Filipino)', progress: 72, lessons: 18, done: 13, color: '#1d4ed8', icon: '🇵🇭' },
+  { id: 'ls2', subject: 'LS 2 — Communication Skills (English)',  progress: 55, lessons: 16, done: 9,  color: '#16a34a', icon: '🗣️' },
+  { id: 'ls3', subject: 'LS 3 — Mathematical & Problem-Solving',  progress: 88, lessons: 20, done: 17, color: '#7c3aed', icon: '🔢' },
+  { id: 'ls4', subject: 'LS 4 — Life and Career Skills',          progress: 40, lessons: 15, done: 6,  color: '#d97706', icon: '💼' },
+  { id: 'ls5', subject: 'LS 5 — Understanding Self & Society',    progress: 60, lessons: 12, done: 7,  color: '#0891b2', icon: '🌏' },
+  { id: 'ls6', subject: 'LS 6 — Digital Citizenship',             progress: 20, lessons: 10, done: 2,  color: '#be185d', icon: '💻' },
 ];
+
+const FLT_STATUS = {
+  taken: true,
+  classification: 'Elementary Level',
+  score: 78,
+  date: 'Feb 20, 2026',
+};
 
 const UPCOMING = [
-  { id: 'q1', title: 'Math — Fractions Quiz',        date: 'Mar 12',   type: 'quiz' },
-  { id: 'q2', title: 'Science — Unit 2 Assessment',  date: 'Mar 17',   type: 'assessment' },
-  { id: 'q3', title: 'English — Essay Submission',   date: 'Mar 20',   type: 'activity' },
+  { id: 'q1', title: 'LS 3 — Fractions Quiz',            date: 'Mar 12',   type: 'quiz' },
+  { id: 'q2', title: 'LS 4 — Life Skills Assessment',    date: 'Mar 17',   type: 'assessment' },
+  { id: 'q3', title: 'LS 2 — Essay Submission',          date: 'Mar 20',   type: 'activity' },
 ];
 
 const typeColor: Record<string, string> = {
@@ -39,7 +49,7 @@ const StudentDashboard: React.FC = () => {
   const [loading, setLoading] = useState(false);
 
   const overall = Math.round(
-    ENROLLED_COURSES.reduce((s, c) => s + c.progress, 0) / ENROLLED_COURSES.length
+    LEARNING_STRANDS.reduce((s, c) => s + c.progress, 0) / LEARNING_STRANDS.length
   );
 
   const doRefresh = async (e: CustomEvent) => {
@@ -106,24 +116,55 @@ const StudentDashboard: React.FC = () => {
           <div className="quick-stats">
             <div className="qstat-card">
               <IonIcon icon={bookOutline} className="qstat-icon" style={{ color: '#1d4ed8' }} />
-              <p className="qstat-num">{ENROLLED_COURSES.length}</p>
-              <p className="qstat-lbl">Subjects</p>
+              <p className="qstat-num">{LEARNING_STRANDS.length}</p>
+              <p className="qstat-lbl">Learning Strands</p>
             </div>
             <div className="qstat-card">
               <IonIcon icon={checkmarkCircle} className="qstat-icon" style={{ color: '#16a34a' }} />
-              <p className="qstat-num">45</p>
-              <p className="qstat-lbl">Lessons Done</p>
+              <p className="qstat-num">54</p>
+              <p className="qstat-lbl">Modules Done</p>
             </div>
             <div className="qstat-card">
-              <IonIcon icon={trophyOutline} className="qstat-icon" style={{ color: '#d97706' }} />
-              <p className="qstat-num">7</p>
-              <p className="qstat-lbl">Badges</p>
+              <IonIcon icon={clipboardOutline} className="qstat-icon" style={{ color: '#d97706' }} />
+              <p className="qstat-num">{FLT_STATUS.classification.split(' ')[0]}</p>
+              <p className="qstat-lbl">FLT Level</p>
             </div>
             <div className="qstat-card">
               <IonIcon icon={timeOutline} className="qstat-icon" style={{ color: '#7c3aed' }} />
               <p className="qstat-num">18h</p>
               <p className="qstat-lbl">Study Time</p>
             </div>
+          </div>
+
+          {/* ── FLT Status Card ── */}
+          <div className="section-wrap">
+            <div className="section-title-row">
+              <p className="section-title">Functional Literacy Test</p>
+              <button className="see-all" onClick={() => history.push('/student/assessment')}>
+                {FLT_STATUS.taken ? 'View Results' : 'Take FLT'} <IonIcon icon={chevronForward} />
+              </button>
+            </div>
+            <div className="flt-status-card" style={{ borderLeft: `4px solid ${FLT_STATUS.taken ? '#16a34a' : '#d97706'}` }}>
+              <div className="flt-info">
+                <p className="flt-label">{FLT_STATUS.taken ? '✅ FLT Completed' : '⏳ FLT Not Yet Taken'}</p>
+                {FLT_STATUS.taken && (
+                  <>
+                    <p className="flt-class">Classification: <strong>{FLT_STATUS.classification}</strong></p>
+                    <p className="flt-date">Score: {FLT_STATUS.score}% · Taken {FLT_STATUS.date}</p>
+                  </>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* ── Learning Pathway Toggle ── */}
+          <div className="section-wrap">
+            <p className="section-title">Learning Pathway</p>
+            <div className="pathway-toggle">
+              <button className="pathway-btn pathway-active">📖 Guided Learning</button>
+              <button className="pathway-btn">🎯 Challenge Mode</button>
+            </div>
+            <p className="pathway-desc">Guided mode: step-by-step mastery of each learning strand module.</p>
           </div>
 
           {/* ── Announcements ── */}
@@ -144,16 +185,16 @@ const StudentDashboard: React.FC = () => {
             </div>
           </div>
 
-          {/* ── My Courses ── */}
+          {/* ── My Learning Strands ── */}
           <div className="section-wrap">
             <div className="section-title-row">
-              <p className="section-title">My Subjects</p>
+              <p className="section-title">My Learning Strands</p>
               <button className="see-all" onClick={() => history.push('/student/courses')}>
                 See All <IonIcon icon={chevronForward} />
               </button>
             </div>
             <div className="courses-list">
-              {ENROLLED_COURSES.map((c) => (
+              {LEARNING_STRANDS.slice(0, 4).map((c) => (
                 <div
                   key={c.id}
                   className="course-card ion-activatable"
@@ -168,7 +209,7 @@ const StudentDashboard: React.FC = () => {
                     <div className="als-progress-track" style={{ marginTop: 6 }}>
                       <div className="als-progress-fill" style={{ width: `${c.progress}%`, background: c.color }} />
                     </div>
-                    <p className="course-meta">{c.done}/{c.lessons} lessons · {c.progress}%</p>
+                    <p className="course-meta">{c.done}/{c.lessons} modules · {c.progress}%</p>
                   </div>
                   <IonIcon icon={chevronForward} className="course-arrow" />
                 </div>

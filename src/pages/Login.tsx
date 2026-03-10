@@ -11,12 +11,16 @@ import {
 import { useAuth, AuthUser } from '../App';
 import './Login.css';
 
-type Role = 'student' | 'teacher' | 'admin';
+type Role = 'student' | 'implementer' | 'teacher' | 'admin';
 
 const MOCK_USERS: Record<Role, AuthUser> = {
   student: {
     id: 's001', name: 'Maria Santos', email: 'maria@als.edu.ph',
     role: 'student', avatar: 'MS', grade: 'Elementary Level',
+  },
+  implementer: {
+    id: 'i001', name: 'Rosa Bautista', email: 'rosa@als.edu.ph',
+    role: 'implementer', avatar: 'RB',
   },
   teacher: {
     id: 't001', name: 'Juan Dela Cruz', email: 'juan@als.edu.ph',
@@ -29,9 +33,10 @@ const MOCK_USERS: Record<Role, AuthUser> = {
 };
 
 const ROLES: { key: Role; label: string; icon: string; color: string }[] = [
-  { key: 'student', label: 'Learner',     icon: schoolOutline,  color: '#1d4ed8' },
-  { key: 'teacher', label: 'Facilitator', icon: peopleOutline,  color: '#16a34a' },
-  { key: 'admin',   label: 'Admin',       icon: shieldOutline,  color: '#7c3aed' },
+  { key: 'student',      label: 'Learner',      icon: schoolOutline,  color: '#1d4ed8' },
+  { key: 'implementer',  label: 'Implementer',  icon: peopleOutline,  color: '#d97706' },
+  { key: 'teacher',      label: 'Teacher',      icon: shieldOutline,  color: '#16a34a' },
+  { key: 'admin',        label: 'Admin',         icon: shieldOutline,  color: '#7c3aed' },
 ];
 
 const LoginPage: React.FC = () => {
@@ -57,6 +62,7 @@ const LoginPage: React.FC = () => {
     login(MOCK_USERS[role]);
     const dest =
       role === 'student' ? '/student/dashboard' :
+      role === 'implementer' ? '/implementer/dashboard' :
       role === 'teacher' ? '/teacher/dashboard' :
       '/admin/dashboard';
     history.replace(dest);
@@ -73,6 +79,7 @@ const LoginPage: React.FC = () => {
       login(MOCK_USERS[r]);
       const dest =
         r === 'student' ? '/student/dashboard' :
+        r === 'implementer' ? '/implementer/dashboard' :
         r === 'teacher' ? '/teacher/dashboard' :
         '/admin/dashboard';
       history.replace(dest);

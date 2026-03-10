@@ -1,0 +1,162 @@
+.ti-content {
+  --background: #f8fafc;
+}
+
+.ti-top {
+  padding: 8px 16px 0;
+}
+
+.ti-body {
+  padding: 0 16px 32px;
+}
+
+.ti-count {
+  font-size: 0.82rem;
+  color: #64748b;
+  margin: 0 0 12px;
+}
+
+.ti-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.ti-card:active {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.ti-card-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ti-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.ti-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.ti-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 2px;
+}
+
+.ti-meta {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin: 0 0 6px;
+}
+
+.ti-metrics {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ti-metric {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.ti-metric strong {
+  color: #1e293b;
+}
+
+/* Expanded section */
+.ti-expanded {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.ti-exp-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #334155;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ti-learner-row {
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+}
+
+.ti-learner-name {
+  font-size: 0.82rem;
+  color: #334155;
+  width: 100px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.als-progress-track {
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.als-progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s;
+}
+
+.ti-learner-pct {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #475569;
+  width: 36px;
+  text-align: right;
+}
+
+.ti-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.ti-action-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ti-action-btn.recommend {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+.ti-action-btn.message {
+  background: #dbeafe;
+  color: #1d4ed8;
+}

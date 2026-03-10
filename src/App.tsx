@@ -1,12 +1,13 @@
 import React, { createContext, useContext, useState } from 'react';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom';
 
 import WelcomePage       from './pages/Welcome';
 import LoginPage         from './pages/Login';
 import RegisterPage      from './pages/Register';
 import StudentTabs       from './pages/student/StudentTabs';
+import ImplementerTabs   from './pages/implementer/ImplementerTabs';
 import TeacherTabs       from './pages/teacher/TeacherTabs';
 import AdminTabs         from './pages/admin/AdminTabs';
 
@@ -17,7 +18,7 @@ export interface AuthUser {
   id:     string;
   name:   string;
   email:  string;
-  role:   'student' | 'teacher' | 'admin';
+  role:   'student' | 'implementer' | 'teacher' | 'admin';
   avatar: string;
   grade?: string;
 }
@@ -36,6 +37,21 @@ export const AuthContext = createContext<AuthCtx>({
 
 export const useAuth = () => useContext(AuthContext);
 
+/* Handles the root "/" path — shows Welcome when logged out,
+   redirects to the role dashboard when logged in.
+   This avoids putting a conditional expression directly inside
+   IonRouterOutlet (which crashes Ionic's StackManager). */
+const RootRoute: React.FC = () => {
+  const { user } = useContext(AuthContext);
+  if (!user) return <WelcomePage />;
+  const dest =
+    user.role === 'student'     ? '/student/dashboard'
+    : user.role === 'implementer' ? '/implementer/dashboard'
+    : user.role === 'teacher'     ? '/teacher/dashboard'
+    : '/admin/dashboard';
+  return <Redirect to={dest} />;
+};
+
 const App: React.FC = () => {
   const [user, setUser] = useState<AuthUser | null>(null);
 
@@ -46,38 +62,24 @@ const App: React.FC = () => {
     <AuthContext.Provider value={{ user, login, logout }}>
       <IonApp>
         <IonReactRouter>
-          {user ? (
-            <IonRouterOutlet>
-              <Switch>
-                {user.role === 'student' && (
-                  <Route path="/student" render={() => <StudentTabs />} />
-                )}
-                {user.role === 'teacher' && (
-                  <Route path="/teacher" render={() => <TeacherTabs />} />
-                )}
-                {user.role === 'admin' && (
-                  <Route path="/admin" render={() => <AdminTabs />} />
-                )}
-                <Redirect
-                  exact
-                  from="/"
-                  to={
-                    user.role === 'student' ? '/student/dashboard'
-                    : user.role === 'teacher' ? '/teacher/dashboard'
-                    : '/admin/dashboard'
-                  }
-                />
-                <Redirect to={user.role === 'student' ? '/student/dashboard' : user.role === 'teacher' ? '/teacher/dashboard' : '/admin/dashboard'} />
-              </Switch>
-            </IonRouterOutlet>
-          ) : (
-            <IonRouterOutlet>
-              <Route exact path="/"        component={WelcomePage} />
-              <Route exact path="/login"   component={LoginPage} />
-              <Route exact path="/register" component={RegisterPage} />
-              <Redirect to="/" />
-            </IonRouterOutlet>
-          )}
+          <IonRouterOutlet>
+            {/* Root: Welcome when logged out, role dashboard when logged in */}
+            <Route exact path="/" component={RootRoute} />
+            <Route exact path="/login"    component={LoginPage} />
+            <Route exact path="/register" component={RegisterPage} />
+
+            {/* Protected routes — guard inside render prop, never conditionally omitted */}
+            <Route path="/student"
+              render={() => user?.role === 'student' ? <StudentTabs /> : <Redirect to="/" />} />
+            <Route path="/implementer"
+              render={() => user?.role === 'implementer' ? <ImplementerTabs /> : <Redirect to="/" />} />
+            <Route path="/teacher"
+              render={() => user?.role === 'teacher' ? <TeacherTabs /> : <Redirect to="/" />} />
+            <Route path="/admin"
+              render={() => user?.role === 'admin' ? <AdminTabs /> : <Redirect to="/" />} />
+
+            <Redirect to="/" />
+          </IonRouterOutlet>
         </IonReactRouter>
       </IonApp>
     </AuthContext.Provider>

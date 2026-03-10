@@ -7,7 +7,7 @@ import { useLocation, useHistory } from 'react-router-dom';
 import {
   homeOutline, bookOutline, clipboardOutline, barChartOutline, personOutline,
   peopleOutline, createOutline, documentTextOutline, settingsOutline,
-  logOutOutline, schoolOutline,
+  logOutOutline, schoolOutline, folderOpenOutline, analyticsOutline,
 } from 'ionicons/icons';
 import { useAuth } from '../App';
 import './SideMenu.css';
@@ -20,18 +20,26 @@ interface NavItem {
 
 const STUDENT_NAV: NavItem[] = [
   { label: 'Dashboard',   icon: homeOutline,       href: '/student/dashboard' },
-  { label: 'My Courses',  icon: bookOutline,        href: '/student/courses'   },
-  { label: 'Assessments', icon: clipboardOutline,   href: '/student/assessment'},
+  { label: 'Learning Strands', icon: bookOutline,   href: '/student/courses'   },
+  { label: 'FLT & Assessments', icon: clipboardOutline, href: '/student/assessment'},
   { label: 'Progress',    icon: barChartOutline,    href: '/student/progress'  },
   { label: 'Profile',     icon: personOutline,      href: '/student/profile'   },
 ];
 
+const IMPLEMENTER_NAV: NavItem[] = [
+  { label: 'Dashboard',       icon: homeOutline,           href: '/implementer/dashboard' },
+  { label: 'My Learners',     icon: peopleOutline,         href: '/implementer/learners'  },
+  { label: 'Resources',       icon: folderOpenOutline,     href: '/implementer/resources' },
+  { label: 'FLT Results',     icon: clipboardOutline,      href: '/implementer/flt'       },
+  { label: 'Profile',         icon: personOutline,         href: '/implementer/profile'   },
+];
+
 const TEACHER_NAV: NavItem[] = [
-  { label: 'Dashboard',   icon: homeOutline,        href: '/teacher/dashboard' },
-  { label: 'Learners',    icon: peopleOutline,      href: '/teacher/learners'  },
-  { label: 'Grading',     icon: createOutline,      href: '/teacher/grading'   },
-  { label: 'Reports',     icon: documentTextOutline,href: '/teacher/reports'   },
-  { label: 'Profile',     icon: personOutline,      href: '/teacher/profile'   },
+  { label: 'Dashboard',        icon: homeOutline,           href: '/teacher/dashboard' },
+  { label: 'Implementers',     icon: peopleOutline,         href: '/teacher/implementers'  },
+  { label: 'FLT Oversight',    icon: analyticsOutline,      href: '/teacher/flt'   },
+  { label: 'Reports',          icon: documentTextOutline,   href: '/teacher/reports'   },
+  { label: 'Profile',          icon: personOutline,         href: '/teacher/profile'   },
 ];
 
 const ADMIN_NAV: NavItem[] = [
@@ -43,9 +51,10 @@ const ADMIN_NAV: NavItem[] = [
 ];
 
 const ROLE_THEME: Record<string, { color: string; label: string; gradient: string }> = {
-  student: { color: '#1d4ed8', label: 'Learner',      gradient: 'linear-gradient(135deg,#1d4ed8,#1e40af)' },
-  teacher: { color: '#16a34a', label: 'Facilitator',  gradient: 'linear-gradient(135deg,#16a34a,#15803d)' },
-  admin:   { color: '#7c3aed', label: 'System Admin', gradient: 'linear-gradient(135deg,#7c3aed,#6d28d9)' },
+  student:     { color: '#1d4ed8', label: 'ALS Learner',              gradient: 'linear-gradient(135deg,#1d4ed8,#1e40af)' },
+  implementer: { color: '#d97706', label: 'ALS Implementer',          gradient: 'linear-gradient(135deg,#d97706,#b45309)' },
+  teacher:     { color: '#16a34a', label: 'ALS Mobile Teacher',       gradient: 'linear-gradient(135deg,#16a34a,#15803d)' },
+  admin:       { color: '#7c3aed', label: 'System Admin',             gradient: 'linear-gradient(135deg,#7c3aed,#6d28d9)' },
 };
 
 const SideMenu: React.FC = () => {
@@ -58,6 +67,7 @@ const SideMenu: React.FC = () => {
 
   const theme  = ROLE_THEME[user.role] ?? ROLE_THEME['student'];
   const navItems = user.role === 'student' ? STUDENT_NAV
+                 : user.role === 'implementer' ? IMPLEMENTER_NAV
                  : user.role === 'teacher' ? TEACHER_NAV
                  : ADMIN_NAV;
 

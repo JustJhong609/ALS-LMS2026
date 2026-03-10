@@ -85,3 +85,12 @@
 }
 .t-qc-icon  { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 26px; }
 .t-qc-label { font-size: 13px; font-weight: 700; color: #334155; text-align: center; margin: 0; }
+
+/* Audit log items */
+.t-audit-list { display: flex; flex-direction: column; gap: 8px; }
+.t-audit-item {
+  background: #fff; border-radius: 10px; padding: 12px 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04); border-left: 3px solid #16a34a;
+}
+.t-audit-action { font-size: 13px; font-weight: 600; color: #1e293b; margin: 0; }
+.t-audit-meta { font-size: 11px; color: #94a3b8; margin: 4px 0 0; }
