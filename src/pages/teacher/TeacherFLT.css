@@ -1,0 +1,149 @@
+.tf-content {
+  --background: #f8fafc;
+}
+
+.tf-body {
+  padding: 16px;
+}
+
+/* Summary row */
+.tf-summary-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tf-stat-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 10px;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.tf-stat-val {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.tf-stat-val.green { color: #16a34a; }
+.tf-stat-val.red { color: #dc2626; }
+.tf-stat-val.blue { color: #1d4ed8; }
+
+.tf-stat-lbl {
+  font-size: 0.72rem;
+  color: #64748b;
+  margin: 2px 0 0;
+}
+
+/* Sections */
+.tf-section {
+  margin-bottom: 24px;
+}
+
+.tf-section-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  margin: 0 0 10px;
+}
+
+.tf-chart-wrap {
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.tf-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.tf-legend-item {
+  font-size: 0.75rem;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tf-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* Filter */
+.tf-filter-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.tf-filter-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  font-size: 0.8rem;
+  color: #475569;
+  cursor: pointer;
+}
+
+.tf-filter-btn.active {
+  background: #16a34a;
+  color: #fff;
+  border-color: #16a34a;
+}
+
+/* Learner cards */
+.tf-learner-card {
+  display: flex;
+  gap: 12px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  align-items: flex-start;
+}
+
+.tf-l-left {
+  padding-top: 2px;
+}
+
+.tf-l-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.tf-l-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 2px;
+}
+
+.tf-l-meta {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 0 0 4px;
+}
+
+.tf-l-score {
+  font-size: 0.8rem;
+  color: #475569;
+  margin: 0;
+}
+
+.tf-l-date {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  margin-left: 8px;
+}

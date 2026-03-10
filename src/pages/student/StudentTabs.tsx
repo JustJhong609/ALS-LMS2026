@@ -41,11 +41,11 @@ const StudentTabs: React.FC = () => (
       </IonTabButton>
       <IonTabButton tab="courses" href="/student/courses">
         <IonIcon ios={bookOutline} md={book} />
-        <IonLabel>Courses</IonLabel>
+        <IonLabel>Strands</IonLabel>
       </IonTabButton>
       <IonTabButton tab="assessment" href="/student/assessment">
         <IonIcon ios={documentTextOutline} md={documentText} />
-        <IonLabel>Assess</IonLabel>
+        <IonLabel>FLT</IonLabel>
       </IonTabButton>
       <IonTabButton tab="progress" href="/student/progress">
         <IonIcon ios={statsChartOutline} md={statsChart} />

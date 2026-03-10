@@ -8,14 +8,12 @@ import { chevronForward, checkmarkCircle, timeOutline } from 'ionicons/icons';
 import './StudentCourses.css';
 
 const ALL_COURSES = [
-  { id: 'c1', subject: 'Communication Arts (Filipino)', progress: 72, lessons: 18, done: 13, color: '#1d4ed8', icon: '🇵🇭', category: 'Language', status: 'in-progress' },
-  { id: 'c2', subject: 'Communication Arts (English)',  progress: 55, lessons: 16, done: 9,  color: '#16a34a', icon: '🗣️', category: 'Language', status: 'in-progress' },
-  { id: 'c3', subject: 'Mathematics',                   progress: 88, lessons: 20, done: 17, color: '#7c3aed', icon: '🔢', category: 'Science & Math', status: 'in-progress' },
-  { id: 'c4', subject: 'Science',                       progress: 40, lessons: 15, done: 6,  color: '#d97706', icon: '🔬', category: 'Science & Math', status: 'in-progress' },
-  { id: 'c5', subject: 'Araling Panlipunan',            progress: 100, lessons: 12, done: 12, color: '#0891b2', icon: '🌏', category: 'Social Studies', status: 'completed' },
-  { id: 'c6', subject: 'Edukasyon sa Pagpapakatao',     progress: 60, lessons: 10, done: 6,  color: '#be185d', icon: '❤️', category: 'Values', status: 'in-progress' },
-  { id: 'c7', subject: 'Career Pathways',               progress: 20, lessons: 8,  done: 2,  color: '#065f46', icon: '💼', category: 'Livelihood', status: 'not-started' },
-  { id: 'c8', subject: 'Digital Skills',                progress: 0,  lessons: 10, done: 0,  color: '#1e40af', icon: '💻', category: 'Technology', status: 'not-started' },
+  { id: 'ls1', subject: 'LS 1 — Communication Skills (Filipino)', progress: 72, lessons: 18, done: 13, color: '#1d4ed8', icon: '🇵🇭', category: 'Learning Strand 1', status: 'in-progress' },
+  { id: 'ls2', subject: 'LS 2 — Communication Skills (English)',  progress: 55, lessons: 16, done: 9,  color: '#16a34a', icon: '🗣️', category: 'Learning Strand 2', status: 'in-progress' },
+  { id: 'ls3', subject: 'LS 3 — Mathematical & Problem-Solving',  progress: 88, lessons: 20, done: 17, color: '#7c3aed', icon: '🔢', category: 'Learning Strand 3', status: 'in-progress' },
+  { id: 'ls4', subject: 'LS 4 — Life and Career Skills',          progress: 40, lessons: 15, done: 6,  color: '#d97706', icon: '💼', category: 'Learning Strand 4', status: 'in-progress' },
+  { id: 'ls5', subject: 'LS 5 — Understanding Self & Society',    progress: 100, lessons: 12, done: 12, color: '#0891b2', icon: '🌏', category: 'Learning Strand 5', status: 'completed' },
+  { id: 'ls6', subject: 'LS 6 — Digital Citizenship',             progress: 20, lessons: 10, done: 2,  color: '#be185d', icon: '💻', category: 'Learning Strand 6', status: 'not-started' },
 ];
 
 const FILTERS = ['All', 'In Progress', 'Completed', 'Not Started'];
@@ -38,14 +36,14 @@ const StudentCourses: React.FC = () => {
     <IonPage>
       <IonHeader className="als-header ion-no-border">
         <IonToolbar>
-          <IonTitle className="toolbar-title">My Subjects</IonTitle>
+          <IonTitle className="toolbar-title">Learning Strands</IonTitle>
         </IonToolbar>
       </IonHeader>
 
       <IonContent className="courses-content">
         <div className="courses-top">
           <IonSearchbar
-            placeholder="Search subjects..."
+            placeholder="Search learning strands..."
             value={search}
             onIonInput={(e) => setSearch(e.detail.value ?? '')}
             className="als-searchbar"
@@ -64,7 +62,7 @@ const StudentCourses: React.FC = () => {
         </div>
 
         <div className="courses-body">
-          <p className="results-count">{filtered.length} subjects found</p>
+          <p className="results-count">{filtered.length} learning strands found</p>
           <div className="courses-grid">
             {filtered.map((c) => (
               <div

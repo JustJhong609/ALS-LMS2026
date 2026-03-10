@@ -10,12 +10,12 @@ import { trophyOutline, flameOutline, ribbonOutline, timeOutline } from 'ionicon
 import './StudentProgress.css';
 
 const RADAR_DATA = [
-  { subject: 'Filipino',   A: 72 },
-  { subject: 'English',    A: 55 },
-  { subject: 'Math',       A: 88 },
-  { subject: 'Science',    A: 40 },
-  { subject: 'AP',         A: 100 },
-  { subject: 'EsP',        A: 60 },
+  { subject: 'LS 1 (Fil)',   A: 72 },
+  { subject: 'LS 2 (Eng)',   A: 55 },
+  { subject: 'LS 3 (Math)',  A: 88 },
+  { subject: 'LS 4 (Life)',  A: 40 },
+  { subject: 'LS 5 (Self)',  A: 100 },
+  { subject: 'LS 6 (Digi)',  A: 20 },
 ];
 
 const BAR_DATA = [
@@ -28,14 +28,21 @@ const BAR_DATA = [
 ];
 
 const BADGES = [
-  { icon: '🏅', label: 'First Lesson!',    earned: true },
+  { icon: '🏅', label: 'First Module!',    earned: true },
   { icon: '🔥', label: '7-Day Streak',     earned: true },
-  { icon: '🎯', label: 'Perfect Score',    earned: true },
-  { icon: '📚', label: '10 Lessons Done',  earned: true },
-  { icon: '⭐', label: 'Top Performer',    earned: false },
-  { icon: '💎', label: 'Subject Master',   earned: false },
+  { icon: '🎯', label: 'FLT Passed',       earned: true },
+  { icon: '📚', label: '10 Modules Done',  earned: true },
+  { icon: '⭐', label: 'Strand Master',    earned: false },
+  { icon: '💎', label: 'All LS Complete',   earned: false },
   { icon: '🚀', label: 'Early Bird',       earned: true },
-  { icon: '🏆', label: 'ALS Champion',     earned: false },
+  { icon: '🏆', label: 'A&E Ready',        earned: false },
+];
+
+const LEARNING_TARGETS = [
+  { id: 1, target: 'Complete LS 3 (Math) by March 30', progress: 88, status: 'on-track' },
+  { id: 2, target: 'Pass FLT with 80%+ score',         progress: 100, status: 'completed' },
+  { id: 3, target: 'Finish LS 4 (Life Skills) modules', progress: 40, status: 'behind' },
+  { id: 4, target: 'Prepare for A&E Exam',              progress: 55, status: 'on-track' },
 ];
 
 const StudentProgress: React.FC = () => {
@@ -65,7 +72,7 @@ const StudentProgress: React.FC = () => {
             <div className="prog-stat-card">
               <IonIcon icon={ribbonOutline} style={{ color: '#7c3aed' }} />
               <span className="ps-num">85%</span>
-              <span className="ps-lbl">Avg. Score</span>
+              <span className="ps-lbl">FLT Score</span>
             </div>
             <div className="prog-stat-card">
               <IonIcon icon={timeOutline} style={{ color: '#16a34a' }} />
@@ -74,9 +81,30 @@ const StudentProgress: React.FC = () => {
             </div>
           </div>
 
+          {/* ── Learning Targets ── */}
+          <div className="prog-card">
+            <p className="prog-card-title">My Learning Targets</p>
+            {LEARNING_TARGETS.map((t) => (
+              <div key={t.id} className="target-row">
+                <div className="target-info">
+                  <p className="target-text">{t.target}</p>
+                  <span className={`target-status ${t.status}`}>
+                    {t.status === 'completed' ? '✅ Done' : t.status === 'on-track' ? '📈 On Track' : '⚠️ Behind'}
+                  </span>
+                </div>
+                <div className="als-progress-track" style={{ marginTop: 6 }}>
+                  <div className="als-progress-fill" style={{
+                    width: `${t.progress}%`,
+                    background: t.status === 'completed' ? '#16a34a' : t.status === 'on-track' ? '#1d4ed8' : '#dc2626'
+                  }} />
+                </div>
+              </div>
+            ))}
+          </div>
+
           {/* ── Skills Radar ── */}
           <div className="prog-card">
-            <p className="prog-card-title">Subject Mastery</p>
+            <p className="prog-card-title">Learning Strand Mastery</p>
             <ResponsiveContainer width="100%" height={220}>
               <RadarChart data={RADAR_DATA}>
                 <PolarGrid gridType="polygon" />
@@ -109,7 +137,7 @@ const StudentProgress: React.FC = () => {
 
           {/* ── Subject breakdown ── */}
           <div className="prog-card">
-            <p className="prog-card-title">Subject Breakdown</p>
+            <p className="prog-card-title">Strand Breakdown</p>
             {RADAR_DATA.map((s) => (
               <div key={s.subject} className="subj-row">
                 <p className="subj-name">{s.subject}</p>

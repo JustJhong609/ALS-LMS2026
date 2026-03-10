@@ -23,3 +23,13 @@
 
 .rep-card { background: #fff; border-radius: 16px; padding: 20px; box-shadow: 0 2px 12px rgba(30,41,59,0.08); }
 .rep-card-title { font-size: 15px; font-weight: 700; color: #1e293b; margin: 0 0 16px; }
+
+/* Audit log */
+.rep-audit-list { display: flex; flex-direction: column; gap: 10px; }
+.rep-audit-item { display: flex; align-items: flex-start; gap: 10px; }
+.rep-audit-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #16a34a; margin-top: 6px; flex-shrink: 0;
+}
+.rep-audit-action { font-size: 0.82rem; color: #334155; margin: 0; }
+.rep-audit-time { font-size: 0.72rem; color: #94a3b8; margin: 2px 0 0; }

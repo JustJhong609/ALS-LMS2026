@@ -1,0 +1,28 @@
+.imp-prof-content { --background: #f8fafc; }
+.imp-prof-hero {
+  background: linear-gradient(135deg, #d97706, #b45309);
+  padding: 60px 24px 32px; text-align: center; position: relative; overflow: hidden;
+}
+.imp-prof-wave {
+  position: absolute; bottom: -30%; left: -10%; width: 120%; height: 80%;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.08) 0%, transparent 70%);
+}
+.imp-prof-av-wrap { margin-bottom: 12px; }
+.imp-prof-av {
+  width: 72px; height: 72px; border-radius: 50%; margin: 0 auto;
+  background: rgba(255,255,255,0.2); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; font-weight: 800; border: 3px solid rgba(255,255,255,0.4);
+}
+.imp-prof-name { color: #fff; font-size: 20px; font-weight: 800; }
+.imp-prof-role { color: rgba(255,255,255,0.8); font-size: 13px; font-weight: 600; margin-top: 2px; }
+.imp-prof-district { color: rgba(255,255,255,0.6); font-size: 11px; margin-top: 4px; }
+.imp-prof-stats {
+  display: flex; justify-content: center; gap: 0; margin-top: 16px;
+  background: rgba(255,255,255,0.12); border-radius: 14px; padding: 12px;
+}
+.ips { text-align: center; flex: 1; }
+.ips-num { display: block; font-size: 18px; font-weight: 800; color: #fff; }
+.ips-lbl { font-size: 10px; color: rgba(255,255,255,0.7); font-weight: 600; }
+.ips-div { width: 1px; background: rgba(255,255,255,0.2); margin: 0 8px; }
+.imp-prof-body { padding: 20px 16px 32px; }

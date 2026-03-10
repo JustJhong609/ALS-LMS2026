@@ -1,0 +1,39 @@
+.toolbar-title-amber { color: #fff !important; font-weight: 800; font-size: 20px; padding-left: 16px; }
+.als-searchbar-amber { --background: #fffbeb; --border-radius: 14px; --box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.imp-learn-content { --background: #f8fafc; }
+.imp-learn-top { padding: 12px 16px 0; }
+.imp-learn-body { padding: 0 16px 32px; }
+.imp-learn-count { font-size: 12px; color: #94a3b8; font-weight: 600; margin: 8px 0 12px; }
+
+.imp-learn-card {
+  background: #fff; border-radius: 14px; padding: 14px; margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06); cursor: pointer;
+}
+.imp-learn-main { display: flex; align-items: center; gap: 12px; }
+.imp-learn-av {
+  width: 42px; height: 42px; border-radius: 50%;
+  color: #fff; display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 13px; flex-shrink: 0;
+}
+.imp-learn-info { flex: 1; }
+.imp-learn-name { font-size: 14px; font-weight: 700; color: #1e293b; }
+.imp-learn-meta { font-size: 11px; color: #94a3b8; margin-top: 2px; }
+.imp-learn-right { text-align: right; flex-shrink: 0; }
+.imp-learn-pct { font-size: 16px; font-weight: 800; color: #d97706; display: block; }
+.imp-learn-status { font-size: 10px; font-weight: 600; }
+.imp-learn-status.active { color: #16a34a; }
+.imp-learn-status.inactive { color: #dc2626; }
+
+.imp-learn-expanded {
+  margin-top: 12px; padding-top: 12px; border-top: 1px solid #f1f5f9;
+}
+.imp-exp-title { font-size: 12px; font-weight: 700; color: #64748b; margin-bottom: 8px; }
+.imp-strand-row { display: flex; align-items: center; margin-bottom: 6px; }
+.imp-strand-name { font-size: 11px; font-weight: 700; color: #64748b; width: 42px; flex-shrink: 0; }
+.imp-strand-pct { font-size: 11px; font-weight: 700; color: #1e293b; width: 32px; text-align: right; }
+
+.imp-flt-mini {
+  background: #f0fdf4; border-radius: 8px; padding: 8px 12px; margin-top: 8px;
+  font-size: 12px; font-weight: 600; color: #16a34a;
+}
+.imp-flt-mini.warning { background: #fff7ed; color: #d97706; }
